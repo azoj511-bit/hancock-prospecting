@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hancock Prospecting PTY LTD — Fundación Hancock & Portal Institucional</title>
+  <meta name="description" content="Sitio oficial de Hancock Prospecting PTY LTD y Fundación Hancock. Liderazgo minero, mecenazgo deportivo olímpico, mapa interactivo de impacto y solicitud oficial de donación por WhatsApp.">
+  <link rel="icon" type="image/png" href="./img/fundacion-prospeccion-hancock-logo-sans-cadrant.png">
+  
+  <!-- Google Fonts: Libre Baskerville (Serif institutionnel) & Plus Jakarta Sans (Corps lisible) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Leaflet.js Interactive Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Google Translate Integration Callback -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'es',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+
+  <!-- Top Announcement / Info Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-info">
+        <span><i class="fa-solid fa-building-columns"></i> Hancock Prospecting PTY LTD (WA 6005, Australia)</span>
+        <span><i class="fa-solid fa-id-card"></i> ACN: 008 676 417 | ABN: 69 008 676 417</span>
+      </div>
+      <div class="top-contacts">
+        <a href="mailto:prospectinghancock0@gmail.com"><i class="fa-solid fa-envelope"></i> prospectinghancock0@gmail.com</a>
+        <a href="https://wa.me/33757754014" target="_blank" class="top-wa"><i class="fa-brands fa-whatsapp"></i> +33 7 57 75 40 14</a>
+        
+        <!-- Google Translate Widget Container -->
+        <div class="google-translate-wrapper">
+          <i class="fa-solid fa-language"></i>
+          <div id="google_translate_element"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar (Fond blanc pur, logo à gauche, liens en #163A5C, bordure fine #E7E5E4, bouton de don doré à droite) -->
+  <header class="navbar-header" id="navbar">
+    <div class="container navbar-container">
+      <a href="#inicio" class="brand-logo">
+        <img src="./img/fundacion-prospeccion-hancock-logo-sans-cadrant.png" alt="Hancock Prospecting Logo" class="logo-img">
+        <div class="brand-text">
+          <span class="brand-name">HANCOCK</span>
+          <span class="brand-sub">PROSPECTING PTY LTD</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#inicio" class="nav-link active">Inicio</a>
+        <a href="#causas" class="nav-link">Nuestras Causas</a>
+        <a href="#impacto" class="nav-link">Impacto & Mapa</a>
+        <a href="#don-mecenat" class="nav-link">Solicitud de Donación</a>
+        
+        <!-- Dropdown Menu for Media, Gallery & Operations -->
+        <div class="nav-dropdown" id="navDropdown">
+          <button class="dropdown-toggle" id="dropdownBtn" aria-expanded="false">
+            Explorar <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+          </button>
+          <div class="dropdown-menu-card">
+            <a href="#galeria" class="dropdown-item"><i class="fa-solid fa-images"></i> Galería Oficial (27)</a>
+            <a href="#actualidades" class="dropdown-item"><i class="fa-solid fa-newspaper"></i> Actualidades</a>
+            <a href="#prensa" class="dropdown-item"><i class="fa-solid fa-bullhorn"></i> Prensa & Medios</a>
+            <a href="#operaciones" class="dropdown-item"><i class="fa-solid fa-helmet-safety"></i> Operaciones & Minas</a>
+            <a href="#testimonios" class="dropdown-item"><i class="fa-solid fa-comments"></i> Testimonios</a>
+          </div>
+        </div>
+
+        <a href="#nosotros" class="nav-link">Sobre Nosotros</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Bouton de Don doré réservé -->
+        <button class="btn btn-don btn-header-don" id="openDonWizardBtn">
+          <i class="fa-solid fa-hand-holding-heart"></i> Solicitar Donación
+        </button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú de navegación">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 1. HERO SECTION (Fond #FBFAF8, Titre en #163A5C, filet #E8DCC0 de 3px, sous-titre en #44403C) -->
+  <section class="hero-section" id="inicio">
+    <div class="container hero-container">
+      
+      <!-- Insigne officiel de la fondation -->
+      <div class="hero-emblem-wrapper">
+        <img src="./img/fundacion-prospeccion-hancock-logo-sans-cadrant.png" alt="Fundación Hancock" class="hero-emblem-logo">
+        <span class="hero-emblem-text">Fundación Hancock Prospecting — Acción Social y Filantropía Global</span>
+      </div>
+
+      <h1 class="hero-title">Construyendo el Futuro Minero y Apoyando a las Comunidades</h1>
+      
+      <!-- Règle d'or : Filet doré #E8DCC0 de 3 px sous le titre comme seul rappel doré -->
+      <div class="hero-title-divider"></div>
+
+      <p class="hero-lead">
+        Impulsado por la visión y el compromiso personal de Gina Rinehart, Hancock Prospecting redistribuye recursos clave para la investigación médica, la educación superior, el mecenazgo deportivo olímpico y el bienestar de las comunidades rurales.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#don-mecenat" class="btn btn-don btn-large">
+          <i class="fa-brands fa-whatsapp"></i> Enviar Solicitud de Donación por WhatsApp
+        </a>
+        <a href="#impacto" class="btn btn-outline-navy btn-large">
+          <i class="fa-solid fa-map-location-dot"></i> Ver Mapa de Impacto Interactivo
+        </a>
+        <a href="#galeria" class="btn btn-outline btn-large">
+          <i class="fa-solid fa-images"></i> Explorar Galería
+        </a>
+      </div>
+
+      <!-- Image contextuelle héroïque (Flotte minière Roy Hill & exploitation de classe mondiale) -->
+      <div class="hero-visual-showcase">
+        <img src="./img/mine-roy-hill-flotte.png" alt="Flota de camiones mineros Roy Hill en Pilbara">
+        <div class="hero-visual-caption">
+          <div>
+            <h3>Roy Hill & Cuenca de Pilbara (Australia Occidental)</h3>
+            <p>Infraestructura industrial de vanguardia y pilar de la redistribución filantrópica nacional.</p>
+          </div>
+          <a href="#operaciones" class="btn btn-sm btn-outline-navy" style="background: rgba(255,255,255,0.9);">
+            Ver Operaciones <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Key Figures Grid (Cartes blanches sur fond #FBFAF8 avec bordure fine) -->
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
+          <div class="stat-number">$1,272,500 AUD</div>
+          <div class="stat-label">Incentivo directo a atletas olímpicos australianos</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-handshake"></i></div>
+          <div class="stat-number">+100</div>
+          <div class="stat-label">Proyectos comunitarios financiados activamente</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-medal"></i></div>
+          <div class="stat-number">N°1</div>
+          <div class="stat-label">Mayor mecenas privado del deporte australiano</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-landmark"></i></div>
+          <div class="stat-number">1955</div>
+          <div class="stat-label">Fundación y legado de independencia nacional</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. NUESTRAS CAUSAS SECTION (Fond #FBFAF8, filet #E7E5E4 de séparation) -->
+  <section class="section section-causes" id="causas">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag"><i class="fa-solid fa-ribbon"></i> Visión y Mecenazgo</div>
+        <h2 class="section-title">Nuestras Causas y el Compromiso de Gina Rinehart</h2>
+        <p class="section-subtitle">
+          Conozca la trayectoria filantrópica, las prioridades humanitarias y las áreas de acción respaldadas por nuestra Presidenta Ejecutiva Gina Rinehart y la Fundación Hancock Prospecting.
+        </p>
+      </div>
+
+      <!-- Featured Story: Gina Rinehart's Philanthropic Journey -->
+      <div class="cause-story-card">
+        <div class="cause-story-img">
+          <img src="./img/gina-rinehart-conviction.png" alt="Gina Rinehart Filantropía y Compromiso">
+          <div class="cause-badge-overlay">
+            <i class="fa-solid fa-quote-left"></i>
+            <p>«El verdadero valor del éxito industrial reside en nuestra capacidad de devolver a la sociedad y construir un futuro digno y próspero para nuestros ciudadanos.»</p>
+            <span>— Gina Rinehart, Executive Chairman</span>
+          </div>
+        </div>
+        <div class="cause-story-content">
+          <div class="cause-tag-pill"><i class="fa-solid fa-star"></i> Compromiso y Filosofía</div>
+          <h3>Una Convicción Profunda: Invertir en el Ser Humano</h3>
+          <p>
+            Bajo el liderazgo de Gina Rinehart, Hancock Prospecting se ha consolidado como el mayor donante privado individual de Australia. Convencida de que la riqueza industrial adquiere su pleno sentido cuando respalda directamente a la sociedad, destina una parte sustancial de los recursos a proyectos humanitarios, médicos y formativos.
+          </p>
+          <p>
+            Su modelo filantrópico prioriza la acción directa sin burocracias intermediarias, asegurando que cada aportación alcance con máxima eficiencia a los beneficiarios de zonas rurales, centros de salud y jóvenes talentos.
+          </p>
+
+          <div class="cause-highlights">
+            <div class="highlight-item">
+              <i class="fa-solid fa-bullseye"></i>
+              <div>
+                <strong>Acción directa sobre el terreno:</strong> Financiamiento íntegro y sin intermediarios para maximizar el impacto social real.
+              </div>
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-people-roof"></i>
+              <div>
+                <strong>Solidaridad comunitaria:</strong> Prioridad absoluta al acceso a la salud en zonas aisladas y a las familias del interior rural.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Grid of Specific Causes Supported -->
+      <div class="causes-grid">
+        <!-- Cause 1: Sports & Olympics -->
+        <div class="cause-card">
+          <div class="cause-card-thumb">
+            <img src="./img/jo-paris-2024-natation-hancock.png" alt="Gina Rinehart con la delegación olímpica de natación">
+          </div>
+          <div class="cause-card-body">
+            <div class="cause-card-icon"><i class="fa-solid fa-person-swimming"></i></div>
+            <h3>Mecenazgo Deportivo & Atletas Olímpicos</h3>
+            <p>
+              Apoyo incondicional a la natación, remo y voleibol australianos. Becas e incentivos directos para que los atletas compitan al más alto nivel mundial.
+            </p>
+            <div class="cause-footer">
+              <span class="cause-stat">Más de $1.2M en bonos directos</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cause 2: Health & Oncology -->
+        <div class="cause-card">
+          <div class="cause-card-thumb">
+            <img src="./img/village-communaute-pilbara.png" alt="Instalaciones de salud en comunidades mineras">
+          </div>
+          <div class="cause-card-body">
+            <div class="cause-card-icon"><i class="fa-solid fa-notes-medical"></i></div>
+            <h3>Investigación Médica & Salud Regional</h3>
+            <p>
+              Adquisición de escáneres de detección precoz de cáncer y fortalecimiento de hospitales regionales en Australia Occidental y áreas remotas.
+            </p>
+            <div class="cause-footer">
+              <span class="cause-stat">Equipamiento de alta complejidad</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cause 3: Education & Scholarships -->
+        <div class="cause-card">
+          <div class="cause-card-thumb">
+            <img src="./img/bourses-prix-excellence-rural.png" alt="Remise de bourses d'excellence">
+          </div>
+          <div class="cause-card-body">
+            <div class="cause-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3>Educación & Becas de Excelencia</h3>
+            <p>
+              Financiamiento universitario completo para jóvenes de zonas rurales y comunidades autóctonas con vocación en ingeniería, tecnología y medicina.
+            </p>
+            <div class="cause-footer">
+              <span class="cause-stat">45 becas completas anuales</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cause 4: Rural Communities -->
+        <div class="cause-card">
+          <div class="cause-card-thumb">
+            <img src="./img/kidman-hat-co-patrimoine-rural.png" alt="Comunidades rurales y patrimonio pastoral">
+          </div>
+          <div class="cause-card-body">
+            <div class="cause-card-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+            <h3>Comunidades Locales & Patrimonio Rural</h3>
+            <p>
+              Infraestructuras hídricas solares, preservación cultural del patrimonio ganadero australiano y fomento del empleo local calificado.
+            </p>
+            <div class="cause-footer">
+              <span class="cause-stat">Autonomía y desarrollo sostenible</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. SECTION IMPACT & CARTE LEAFLET (FOND #EAF0F6, CARTES BLANCHES, CHIFFRES #163A5C) -->
+  <section class="section section-impact" id="impacto">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag"><i class="fa-solid fa-chart-line"></i> Medición del Impacto</div>
+        <h2 class="section-title">Impacto y Resultados de Nuestras Acciones Filantrópicas</h2>
+        <p class="section-subtitle">
+          Transparencia, rigor presupuestario y resultados cuantificables de las intervenciones apoyadas a nivel nacional e internacional.
+        </p>
+      </div>
+
+      <!-- Medición del Impacto (KPI Cards blanches sur fond #EAF0F6, chiffres #163A5C, libellés #78716C) -->
+      <div class="impact-kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-icon"><i class="fa-solid fa-sack-dollar"></i></div>
+          <div class="kpi-val">$18.5M AUD</div>
+          <div class="kpi-label">Fondo Total Invertido</div>
+          <p class="kpi-desc">Consolidado acumulado para la salud, deportes y desarrollo de comunidades.</p>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon"><i class="fa-solid fa-hospital-user"></i></div>
+          <div class="kpi-val">+250 000</div>
+          <div class="kpi-label">Beneficiarios Directos</div>
+          <p class="kpi-desc">Pacientes atendidos en centros asistenciales y hospitales regionales dotados.</p>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon"><i class="fa-solid fa-user-graduate"></i></div>
+          <div class="kpi-val">120+</div>
+          <div class="kpi-label">Becas de Excelencia</div>
+          <p class="kpi-desc">Estudiantes de zonas remotas con estudios superiores completamente sufragados.</p>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon"><i class="fa-solid fa-shield-check"></i></div>
+          <div class="kpi-val">100%</div>
+          <div class="kpi-label">Transparencia y Auditoría</div>
+          <p class="kpi-desc">Gobernanza ética y asignación directa de subvenciones sin intermediarios.</p>
+        </div>
+      </div>
+
+      <!-- CARTE DES PROJETS ACTIFS (LEAFLET DYNAMIC MAP RECONÇU) -->
+      <div class="leaflet-map-card">
+        <div class="map-section-header">
+          <h3><i class="fa-solid fa-earth-americas"></i> Carte des Projets Actifs / Mapa de Proyectos Activos</h3>
+          <p>Explore las intervenciones y programas de dotación filantrópica haciendo clic en los puntos del mapa.</p>
+        </div>
+
+        <!-- FILTER CONTROLS BAR (Sobre, claire, responsive) -->
+        <div class="map-filter-bar">
+          <div class="filter-select-group">
+            <label for="mapFilterCause">ÁREA DEL PROYECTO</label>
+            <select id="mapFilterCause" onchange="updateLeafletMapMarkers()">
+              <option value="all">Todas las causas / Tous les domaines</option>
+              <option value="salud">Investigación Médica & Oncología</option>
+              <option value="educacion">Educación & Becas Universitarias</option>
+              <option value="deporte">Deporte & Salud Olímpica</option>
+              <option value="comunidad">Desarrollo Comunitario & Rural</option>
+            </select>
+          </div>
+
+          <div class="filter-select-group">
+            <label for="mapFilterCountry">PAÍS / TERRITORIO</label>
+            <select id="mapFilterCountry" onchange="updateLeafletMapMarkers()">
+              <option value="all">Todos los países / Tous les pays</option>
+              <option value="australia">Australia</option>
+              <option value="espana">España</option>
+              <option value="mexico">México</option>
+              <option value="colombia">Colombia</option>
+              <option value="francia">Francia</option>
+            </select>
+          </div>
+
+          <div class="filter-select-group">
+            <label for="mapFilterStatus">ESTATUTO DEL PROGRAMA</label>
+            <select id="mapFilterStatus" onchange="updateLeafletMapMarkers()">
+              <option value="all">Todos los estatutos / Tous statuts</option>
+              <option value="activo">Proyectos Activos</option>
+              <option value="alianza">Alianzas Internacionales</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- DYNAMIC LEAFLET MAP ELEMENT CONTAINER -->
+        <div id="leafletMap" class="leaflet-map-element"></div>
+
+        <!-- Map Selected Info Panel -->
+        <div id="leafletInfoPanel" class="leaflet-info-panel">
+          <div class="info-panel-content">
+            <div>
+              <h4 class="info-panel-title"><i class="fa-solid fa-hand-pointer" style="color: var(--color-primary); margin-right: 0.4rem;"></i> Seleccione un punto en el mapa</h4>
+              <p class="info-panel-desc">Haga clic en cualquiera de los marcadores para consultar en detalle los montos asignados y los objetivos de la intervención.</p>
+            </div>
+            <div>
+              <span class="info-panel-badge">Actualizado 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROYECTOS FILANTRÓPICOS POR AÑOS (Timeline institutionnelle sobre) -->
+      <div class="timeline-container">
+        <div class="text-center mb-4">
+          <h3 class="timeline-main-title"><i class="fa-solid fa-clock-rotate-left"></i> Historial de Proyectos Filantrópicos por Año</h3>
+          <p style="color: var(--color-text-secondary);">Revisión cronológica de las principales iniciativas impulsadas desde la más reciente hasta las más antiguas.</p>
+        </div>
+
+        <div class="timeline-tree">
+          <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+            <div class="timeline-content">
+              <h4>Fondo de Emergencia Médica y Apoyo Olímpico 2026</h4>
+              <p class="timeline-date"><i class="fa-regular fa-calendar"></i> Año Actual (2026)</p>
+              <p>Incentivos directos de $1,272,500 AUD para los atletas australianos de natación y remo clasificados a los campeonatos mundiales, sumado a fondos de urgencia para dotación hospitalaria en Australia Occidental.</p>
+              <span class="timeline-tag">Deporte & Salud</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2025</div>
+            <div class="timeline-content">
+              <h4>Programa de Becas Universitarias de Excelencia Rural</h4>
+              <p class="timeline-date"><i class="fa-regular fa-calendar"></i> Año 2025</p>
+              <p>Dotación de $2.5M AUD para 45 becas completas anuales dirigidas a estudiantes de comunidades del interior y familias agrícolas para estudios de ingeniería civil, minera y medicina.</p>
+              <span class="timeline-tag">Educación Superior</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-content">
+              <h4>Modernización del Centro de Oncología de Pilbara</h4>
+              <p class="timeline-date"><i class="fa-regular fa-calendar"></i> Año 2024</p>
+              <p>Financiamiento integral de $3.8M AUD para la adquisición e instalación de escáneres de detección precoz de cáncer en los centros médicos regionales del noroeste australiano.</p>
+              <span class="timeline-tag">Salud & Oncología</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-content">
+              <h4>Infraestructuras Comunitarias de Agua y Saneamiento</h4>
+              <p class="timeline-date"><i class="fa-regular fa-calendar"></i> Año 2023</p>
+              <p>Inversión de $1.9M AUD para pozos solares y plantas de purificación de agua en 12 poblados rurales y asentamientos pastorales aislados.</p>
+              <span class="timeline-tag">Infraestructura Comunitaria</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2022</div>
+            <div class="timeline-content">
+              <h4>Programa de Fomento al Talento Deportivo Juvenil</h4>
+              <p class="timeline-date"><i class="fa-regular fa-calendar"></i> Año 2022</p>
+              <p>Construcción y acondicionamiento de centros de entrenamiento regional y equipamiento técnico para jóvenes atletas en clubes formativos ($2.1M AUD).</p>
+              <span class="timeline-tag">Juventud & Deporte</span>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2020</div>
+            <div class="timeline-content">
+              <h4>Fondo de Solidaridad Pandémica y Apoyo Sanitario</h4>
+              <p class="timeline-date"><i class="fa-regular fa-calendar"></i> Año 2020</p>
+              <p>Respuesta directa de emergencia de $4.5M AUD mediante entrega de insumos sanitarios, respiradores y apoyo alimentario a comunidades vulnerables.</p>
+              <span class="timeline-tag">Emergencia Sanitaria</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. SOLICITUD DE DONACIÓN (WHATSAPP WIZARD) -->
+  <section class="section section-don" id="don-mecenat">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag"><i class="fa-solid fa-hand-holding-heart"></i> Formulario Oficial de Subvención</div>
+        <h2 class="section-title">Solicitar una Donación o Subvención</h2>
+        <p class="section-subtitle">
+          ¿Lidera una iniciativa de impacto social, educativo, médico o deportivo? Complete nuestro formulario institucional para transmitir de inmediato su expediente a nuestra secretaría oficial por WhatsApp.
+        </p>
+      </div>
+
+      <div class="don-wizard-card">
+        <div class="wizard-steps">
+          <div class="step-item active" id="stepIndicator1">
+            <div class="step-number">1</div>
+            <div class="step-text">Identidad & Coordenadas</div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step-item" id="stepIndicator2">
+            <div class="step-number">2</div>
+            <div class="step-text">Proyecto & Presupuesto</div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step-item" id="stepIndicator3">
+            <div class="step-number">3</div>
+            <div class="step-text">Expediente Oficial</div>
+          </div>
+        </div>
+
+        <form id="donForm" onsubmit="return false;">
+          <!-- STEP 1 (Identidad del Solicitante y Ubicación) -->
+          <div class="wizard-step-content active" id="wizardStep1">
+            <h3 class="step-title"><i class="fa-solid fa-circle-user"></i> 1. Identidad del Solicitante y Ubicación</h3>
+            
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="donPrenom"><i class="fa-solid fa-user"></i> Nombre *</label>
+                <input type="text" id="donPrenom" required placeholder="Su nombre de pila">
+              </div>
+
+              <div class="form-group">
+                <label for="donNom"><i class="fa-solid fa-signature"></i> Apellidos *</label>
+                <input type="text" id="donNom" required placeholder="Sus apellidos de familia">
+              </div>
+
+              <div class="form-group full-width">
+                <label for="donOrganisme"><i class="fa-solid fa-building-columns"></i> Organización / Entidad (o indique 'Particular')</label>
+                <input type="text" id="donOrganisme" placeholder="Nombre de la institución, fundación u ONG (o deje vacío para 'Particular')">
+              </div>
+
+              <div class="form-group">
+                <label for="donProfesion"><i class="fa-solid fa-briefcase"></i> Profesión / Cargo *</label>
+                <input type="text" id="donProfesion" required placeholder="Ej: Coach de tenis, Docente, Médico, Ingeniero...">
+              </div>
+
+              <div class="form-group">
+                <label for="donSalaire"><i class="fa-solid fa-wallet"></i> Salario mensual (rango) *</label>
+                <input type="text" id="donSalaire" list="salaireList" required placeholder="Ej: 5 000 – 15 000 $ (MXN) o 1 000 – 2 500 €">
+                <datalist id="salaireList">
+                  <option value="Sin ingresos / Estudiante">
+                  <option value="Menos de 1 000 € / USD">
+                  <option value="1 000 – 2 500 € / USD">
+                  <option value="2 500 – 5 000 € / USD">
+                  <option value="5 000 – 15 000 $ (MXN)">
+                  <option value="15 000 – 35 000 $ (MXN)">
+                  <option value="Más de 5 000 € / USD">
+                </datalist>
+              </div>
+
+              <div class="form-group">
+                <label for="donEmail"><i class="fa-solid fa-envelope"></i> Correo electrónico *</label>
+                <input type="email" id="donEmail" required placeholder="ejemplo@dominio.com">
+              </div>
+
+              <div class="form-group">
+                <label for="donTel"><i class="fa-solid fa-phone"></i> Teléfono (con indicativo internacional, ej. +34...) *</label>
+                <input type="tel" id="donTel" required placeholder="Ej: +34 600 000 000 o +52 1 55...">
+              </div>
+
+              <div class="form-group">
+                <label for="donPais"><i class="fa-solid fa-earth-americas"></i> País *</label>
+                <input type="text" id="donPais" required placeholder="Ej: México, España, Colombia, Argentina...">
+              </div>
+
+              <div class="form-group">
+                <label for="donVille"><i class="fa-solid fa-city"></i> Ciudad *</label>
+                <input type="text" id="donVille" required placeholder="Ej: Tijuana, Madrid, Bogotá...">
+              </div>
+
+              <div class="form-group full-width">
+                <label for="donAdresse"><i class="fa-solid fa-location-dot"></i> Dirección completa *</label>
+                <input type="text" id="donAdresse" required placeholder="Calle, número, colonia o barrio, código postal">
+              </div>
+            </div>
+
+            <div class="wizard-actions">
+              <div></div>
+              <button type="button" class="btn btn-navy" onclick="nextDonStep(2)">
+                Siguiente: Proyecto y Presupuesto <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2 (Especificaciones del Proyecto y Presupuesto) -->
+          <div class="wizard-step-content" id="wizardStep2">
+            <h3 class="step-title"><i class="fa-solid fa-file-invoice-dollar"></i> 2. Especificaciones del Proyecto y Presupuesto</h3>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="donCategorie"><i class="fa-solid fa-layer-group"></i> Causa asociada al proyecto *</label>
+                <select id="donCategorie" required>
+                  <option value="Salud y Bienestar">Salud y Bienestar</option>
+                  <option value="Educación y Becas de Estudio">Educación y Becas de Estudio</option>
+                  <option value="Apoyo Deportivo y Atletas">Apoyo Deportivo y Atletas</option>
+                  <option value="Desarrollo Comunitario y Rural">Desarrollo Comunitario y Rural</option>
+                  <option value="Medio Ambiente y Recursos Hídricos">Medio Ambiente y Recursos Hídricos</option>
+                  <option value="Otra causa benéfica">Otra causa benéfica</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="donMontant"><i class="fa-solid fa-coins"></i> Monto solicitado (con divisa) *</label>
+                <input type="text" id="donMontant" required placeholder="Ej: 25 000 $ (MXN), 10 000 €, 15 000 USD">
+              </div>
+
+              <div class="form-group">
+                <label for="donBeneficiaires"><i class="fa-solid fa-users"></i> Número estimado de beneficiarios *</label>
+                <input type="number" id="donBeneficiaires" min="1" required placeholder="Ej: 1, 50, 200, 1000...">
+              </div>
+
+              <div class="form-group">
+                <label for="donCalendario"><i class="fa-solid fa-calendar-days"></i> Calendario estimado del proyecto *</label>
+                <input type="text" id="donCalendario" required placeholder="Ej: Sep 2026 – Oct 2027">
+              </div>
+
+              <div class="form-group full-width">
+                <label for="donDescription"><i class="fa-solid fa-pen-to-square"></i> Memoria explicativa del proyecto *</label>
+                <textarea id="donDescription" rows="5" required placeholder="Describa con claridad los objetivos de su proyecto, el colectivo de beneficiarios y el impacto esperado..."></textarea>
+              </div>
+            </div>
+
+            <div class="wizard-actions">
+              <button type="button" class="btn btn-outline" onclick="prevDonStep(1)">
+                <i class="fa-solid fa-arrow-left"></i> Anterior
+              </button>
+              <button type="button" class="btn btn-navy" onclick="nextDonStep(3)">
+                Generar Expediente Oficial <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3 (Resumen y Envío WhatsApp) -->
+          <div class="wizard-step-content" id="wizardStep3">
+            <h3 class="step-title"><i class="fa-solid fa-file-shield" style="color: var(--color-accent);"></i> Expediente Oficial y Transmisión</h3>
+
+            <p class="summary-intro">
+              Su expediente oficial ha sido generado y estructurado conforme a las normas de la <strong>Fundación Prospección Hancock</strong>. Revise cuidadosamente los datos registrados antes de remitirlo a la secretaría ejecutiva por WhatsApp (+33 7 57 75 40 14).
+            </p>
+
+            <div class="summary-box" id="summaryBox">
+              <!-- Rellenado dinámicamente por JS -->
+            </div>
+
+            <div class="consent-group">
+              <input type="checkbox" id="donConsent" required checked>
+              <label for="donConsent">Acepto la política de privacidad y autorizo el procesamiento de mis datos. Certifico bajo juramento que toda la información provista es verídica.</label>
+            </div>
+
+            <div class="wizard-actions">
+              <button type="button" class="btn btn-outline" onclick="prevDonStep(2)">
+                <i class="fa-solid fa-arrow-left"></i> Modificar datos
+              </button>
+              <!-- Bouton de soumission final doré unique -->
+              <button type="button" class="btn btn-don btn-whatsapp-send" onclick="sendDonToWhatsApp()">
+                <i class="fa-brands fa-whatsapp"></i> Transmitir Solicitud Oficial (+33 757754014)
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Zone de réassurance (Transparence financière, paiement sécurisé) -->
+        <div class="reassurance-bar">
+          <div class="reassurance-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+              <strong>Asignación Directa</strong>
+              <span>Subvenciones íntegras sin comisiones ni intermediarios externos.</span>
+            </div>
+          </div>
+          <div class="reassurance-item">
+            <i class="fa-solid fa-file-circle-check"></i>
+            <div>
+              <strong>Gobernanza Auditada</strong>
+              <span>Transparencia estricta conforme a las leyes australianas e internacionales.</span>
+            </div>
+          </div>
+          <div class="reassurance-item">
+            <i class="fa-solid fa-lock"></i>
+            <div>
+              <strong>Confidencialidad Garantizada</strong>
+              <span>Tratamiento riguroso de expedientes bajo protocolos de seguridad HTTPS.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. GALERÍA DE FOTOS Y ARCHIVOS OFICIALES (27 VISUALES REALES) -->
+  <section class="section section-galeria" id="galeria">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag"><i class="fa-solid fa-images"></i> Archivo Fotográfico Institucional</div>
+        <h2 class="section-title">Galería de Imágenes & Eventos Oficiales</h2>
+        <p class="section-subtitle">
+          Recorrido visual por nuestras operaciones mineras, el patrocinio olímpico en París 2024, las celebraciones comunitarias y los encuentros diplomáticos internacionales.
+        </p>
+      </div>
+
+      <div class="gallery-controls">
+        <button class="filter-btn active" onclick="filterGallery('all', this)">Todas las Imágenes (27)</button>
+        <button class="filter-btn" onclick="filterGallery('philanthropy', this)">Filantropía & Deportes</button>
+        <button class="filter-btn" onclick="filterGallery('operations', this)">Operaciones & Minas</button>
+        <button class="filter-btn" onclick="filterGallery('leadership', this)">Liderazgo & Presidencia</button>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Rellenado dinámicamente por app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. ACTUALIDADES INSTITUCIONALES -->
+  <section class="section section-actualidades" id="actualidades">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag"><i class="fa-solid fa-bullhorn"></i> Novedades Institucionales</div>
+        <h2 class="section-title">Actualidades Recientes</h2>
+        <p class="section-subtitle">
+          Informes de gestión, apertura de convocatorias de apoyo social e información corporativa del grupo.
+        </p>
+      </div>
+
+      <div class="actualidades-grid">
+        <div class="news-card">
+          <div class="news-img">
+            <img src="./img/sommet-affaires-japon.png" alt="Sommet d'affaires au Japon">
+          </div>
+          <div class="news-body">
+            <div class="news-date"><i class="fa-regular fa-calendar-check"></i> 16 Septiembre 2026</div>
+            <h3 class="news-title">Alianzas Estratégicas y Cooperación en Tokio</h3>
+            <p class="news-desc">Reunión de alto nivel de Gina Rinehart y la dirección ejecutiva con socios comerciales e industriales japoneses para proyectos de largo alcance.</p>
+            <a href="#contacto" class="news-link">Más información <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-img">
+            <img src="./img/senex-discours-officiel.png" alt="Inauguration officielle Senex">
+          </div>
+          <div class="news-body">
+            <div class="news-date"><i class="fa-regular fa-calendar-check"></i> 04 Septiembre 2026</div>
+            <h3 class="news-title">Inversión en Recursos Energéticos Senex</h3>
+            <p class="news-desc">Hancock reafirma su compromiso con el desarrollo energético nacional, creando nuevos puestos de trabajo y fortaleciendo las comunidades regionales.</p>
+            <a href="#contacto" class="news-link">Más información <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-img">
+            <img src="./img/rencontre-diplomatique-milei-1.png" alt="Rencontre économique internationale">
+          </div>
+          <div class="news-body">
+            <div class="news-date"><i class="fa-regular fa-calendar-check"></i> 26 Julio 2026</div>
+            <h3 class="news-title">Foro Económico y Relaciones Bilaterales</h3>
+            <p class="news-desc">Diálogo sobre libertad económica, seguridad jurídica y atracción de inversiones para proyectos extractivos y ganaderos sostenibles.</p>
+            <a href="#contacto" class="news-link">Más información <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. PRENSA Y COMUNICADOS -->
+  <section class="section section-presse" id="prensa">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag"><i class="fa-solid fa-newspaper"></i> Cobertura Mediática</div>
+        <h2 class="section-title">Prensa & Comunicados Oficiales</h2>
+        <p class="section-subtitle">
+          Artículos destacados y cobertura en medios internacionales sobre la actividad de Hancock Prospecting.
+        </p>
+      </div>
+
+      <div class="news-grid" id="newsGrid">
+        <!-- Populated dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. TESTIMONIOS -->
+  <section class="section section-testimonios" id="testimonios">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag"><i class="fa-solid fa-comments"></i> Testimonios & Huellas de Impacto</div>
+        <h2 class="section-title">Lo Que Dicen Nuestros Beneficiarios</h2>
+        <p class="section-subtitle">
+          Experiencias de deportistas, médicos, estudiantes y líderes rurales cuyas trayectorias se han potenciado gracias al respaldo directo de la Fundación Hancock.
+        </p>
+      </div>
+
+      <div class="testimonios-grid">
+        <div class="testimonio-card">
+          <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="testimonio-text">
+            «El incentivo directo recibido por parte de la Fundación Hancock nos proporcionó la estabilidad material indispensable para concentrarnos al 100% en las marcas olímpicas de París 2024.»
+          </p>
+          <div class="testimonio-user">
+            <div class="user-avatar"><i class="fa-solid fa-person-swimming"></i></div>
+            <div>
+              <strong>Emma M.</strong>
+              <span>Atleta Olímpica de Natación — Australia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonio-card">
+          <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="testimonio-text">
+            «Gracias a la donación del equipo oncológico por Hancock Prospecting, podemos realizar diagnósticos tempranos en nuestro hospital comarcal sin forzar el traslado de familias a cientos de kilómetros.»
+          </p>
+          <div class="testimonio-user">
+            <div class="user-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+            <div>
+              <strong>Dr. Arthur Vance</strong>
+              <span>Director Médico Asistencial — Pilbara, WA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonio-card">
+          <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+          <p class="testimonio-text">
+            «La Beca de Excelencia Hancock me dio la oportunidad de ingresar a la facultad de ingeniería de minas siendo la primera graduada universitaria de mi comarca rural.»
+          </p>
+          <div class="testimonio-user">
+            <div class="user-avatar"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div>
+              <strong>Sofía R.</strong>
+              <span>Ingeniera & Becaria Universitaria</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. SOBRE NOSOTROS -->
+  <section class="section section-apropos" id="nosotros">
+    <div class="container">
+      <div class="grid-2-cols">
+        <div class="apropos-img-wrapper">
+          <img src="./img/hancock-iron-ore-equipe-siege.png" alt="Sede corporativa Hancock Iron Ore">
+          <div class="badge-overlay">
+            <span class="badge-number">+65 Años</span>
+            <span class="badge-text">De Historia y Rigor Industrial</span>
+          </div>
+        </div>
+
+        <div class="apropos-content">
+          <div class="section-tag"><i class="fa-solid fa-landmark"></i> Tradición & Visión de Futuro</div>
+          <h2 class="section-title">Hancock Prospecting PTY LTD</h2>
+          <p>
+            Fundado por el legendario pionero Lang Hancock y guiado hacia el liderazgo mundial por su hija Gina Rinehart, Hancock Prospecting es el mayor grupo privado minero y agropecuario de Australia.
+          </p>
+          <p>
+            La compañía combina la excelencia técnica en la extracción de mineral de hierro y gas con una profunda vocación de reinversión en el país, apoyando a su capital humano y salvaguardando el orgullo nacional.
+          </p>
+          
+          <ul class="check-list">
+            <li><i class="fa-solid fa-circle-check"></i> Operaciones integradas de talla mundial (Roy Hill, Atlas Iron, Senex Energy).</li>
+            <li><i class="fa-solid fa-circle-check"></i> Mayor contribuyente privado al deporte de alta competición de Australia.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Compromiso incondicional con el bienestar de las comunidades aisladas y la investigación médica.</li>
+          </ul>
+
+          <div class="mt-4">
+            <button class="btn btn-navy" onclick="scrollToSection('don-mecenat')">
+              <i class="fa-solid fa-hand-holding-heart"></i> Transmitir una Solicitud de Donación
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMITÉ EJECUTIVO -->
+      <div class="team-section-block">
+        <div class="section-header text-center" style="margin-bottom: 2.5rem; margin-top: 4rem;">
+          <div class="section-tag"><i class="fa-solid fa-users-gear"></i> Gobierno Corporativo</div>
+          <h2 class="section-title">Comité Ejecutivo</h2>
+          <p class="section-subtitle">El Comité Ejecutivo de Hancock Prospecting es responsable de la gestión de la sociedad y de sus actividades.</p>
+        </div>
+
+        <div class="team-grid team-grid-4">
+          <div class="team-card">
+            <div class="team-photo-wrapper">
+              <img src="./img/comite-gina-rinehart.png" alt="Mrs. Gina Rinehart AO" loading="lazy">
+            </div>
+            <div class="team-card-body">
+              <h4>Mrs. Gina Rinehart AO</h4>
+              <span class="team-role">Presidenta Ejecutiva — Hancock Prospecting, Roy Hill, S. Kidman &amp; Co</span>
+              <p>Gina Rinehart es una figura prominente de las industrias minera y agrícola en Australia. Desde que asumió la presidencia ejecutiva de Hancock Prospecting en 1992, transformó al grupo en una de las compañías mineras privadas más exitosas del mundo.</p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-photo-wrapper">
+              <img src="./img/comite-tad-watroba.png" alt="Mr. Tad Watroba" loading="lazy">
+            </div>
+            <div class="team-card-body">
+              <h4>Mr. Tad Watroba</h4>
+              <span class="team-role">Director Ejecutivo</span>
+              <p>Cincuenta años de experiencia en minería a cielo abierto y subterránea, abarcando operaciones mineras, planificación, estudios de viabilidad, evaluación financiera de proyectos y negociaciones estratégicas.</p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-photo-wrapper">
+              <img src="./img/comite-jay-newby.png" alt="Mr. Jay Newby" loading="lazy">
+            </div>
+            <div class="team-card-body">
+              <h4>Mr. Jay Newby</h4>
+              <span class="team-role">Director Ejecutivo</span>
+              <p>Contador colegiado admitido en el Instituto de Contadores Públicos de Australia en 1988. Amplia trayectoria en finanzas corporativas, contabilidad y fiscalidad, así como fusiones y adquisiciones en el sector minero.</p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-photo-wrapper">
+              <img src="./img/comite-garry-korte.png" alt="Mr. Garry Korte" loading="lazy">
+            </div>
+            <div class="team-card-body">
+              <h4>Mr. Garry Korte</h4>
+              <span class="team-role">Director General (CEO)</span>
+              <p>Más de 30 años de experiencia en la industria minera. Se incorporó a Roy Hill como director financiero en 2012, liderando el financiamiento de proyectos por 7.200 millones de dólares, antes de ser nombrado CEO del Grupo en 2016.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÉQUIPE DIRIGEANTE -->
+      <div class="team-section-block">
+        <div class="section-header text-center" style="margin-bottom: 2.5rem; margin-top: 4rem;">
+          <div class="section-tag"><i class="fa-solid fa-sitemap"></i> Dirección Ejecutiva</div>
+          <h2 class="section-title">Equipo Dirigente</h2>
+          <p class="section-subtitle">Un equipo comprometido al servicio del desarrollo social y de la transparencia.</p>
+        </div>
+
+        <div class="team-grid team-grid-2" style="margin-bottom: 2rem;">
+          <div class="team-card team-card-large">
+            <div class="team-photo-wrapper team-photo-large">
+              <img src="./img/equipe-stuart-johnston.png" alt="Stuart Johnston" loading="lazy">
+            </div>
+            <div class="team-card-body">
+              <h4>Stuart Johnston</h4>
+              <span class="team-role">CEO de Hancock Energy</span>
+              <p>Más de 30 años de experiencia en corporaciones energéticas y de infraestructura internacionales y australianas. Ex CEO de Squadron Energy y del gasoducto Dampier-Bunbury (DBP).</p>
+            </div>
+          </div>
+
+          <div class="team-card team-card-large">
+            <div class="team-photo-wrapper team-photo-large">
+              <img src="./img/equipe-adam-giles.png" alt="Adam Giles" loading="lazy">
+            </div>
+            <div class="team-card-body">
+              <h4>Adam Giles</h4>
+              <span class="team-role">CEO de Hancock Agriculture</span>
+              <p>Adam Giles fue el 10º Ministro Principal del Territorio del Norte (2013-2016). Cuenta con amplia experiencia en administración pública de alto nivel y gestión del desarrollo agropecuario.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-grid team-grid-3">
+          <div class="team-card">
+            <div class="team-photo-wrapper">
+              <img src="./img/equipe-gerhard-veldsman.png" alt="Gerhard Veldsman" loading="lazy">
+            </div>
+            <div class="team-card-body">
+              <h4>Gerhard Veldsman</h4>
+              <span class="team-role">CEO de Operaciones</span>
+              <p>Gerhard posee una vasta experiencia en la industria minera internacional en diversas materias primas, con responsabilidad directa sobre las operaciones de Roy Hill y Atlas Iron.</p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-photo-wrapper">
+              <img src="./img/equipe-sanjiv-manchanda.png" alt="Sanjiv Manchanda" loading="lazy">
+            </div>
+            <div class="team-card-body">
+              <h4>Sanjiv Manchanda</h4>
+              <span class="team-role">CEO de Proyectos</span>
+              <p>Sanjiv supervisa la cartera integral de proyectos de Hancock Prospecting, incluyendo grandes iniciativas de mineral de hierro en Pilbara y expansiones estratégicas.</p>
+            </div>
+          </div>
+
+          <div class="team-card">
+            <div class="team-photo-wrapper">
+              <img src="./img/equipe-jabez-huang.png" alt="Jabez Huang" loading="lazy">
+            </div>
+            <div class="team-card-body">
+              <h4>Jabez Huang</h4>
+              <span class="team-role">Director Financiero (CFO)</span>
+              <p>Jabez cuenta con más de 20 años de experiencia en información financiera, fiscalidad corporativa, consultoría y tesorería en el sector minero australiano.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10. ACTIVITÉS & OPÉRATIONS INDUSTRIELLES -->
+  <section class="section section-operations" id="operaciones">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag"><i class="fa-solid fa-helmet-safety"></i> Nuestras Actividades</div>
+        <h2 class="section-title">Operaciones Industriales y Proyectos Estratégicos</h2>
+        <p class="section-subtitle">
+          Descubra los pilares industriales del grupo: minería de hierro de alta pureza, energía y agroganadería de renombre histórico.
+        </p>
+      </div>
+
+      <div class="ops-grid">
+        <div class="ops-card">
+          <div class="ops-img">
+            <img src="./img/mine-roy-hill-flotte.png" alt="Roy Hill Iron Ore">
+            <span class="ops-tag">Mineral de Hierro</span>
+          </div>
+          <div class="ops-body">
+            <h3>Roy Hill & Pilbara</h3>
+            <p>Mina de mineral de hierro totalmente integrada con 344 km de ferrocarril exclusivo e instalaciones portuarias automatizadas en Port Hedland.</p>
+          </div>
+        </div>
+
+        <div class="ops-card">
+          <div class="ops-img">
+            <img src="./img/senex-energie-inauguration.png" alt="Senex Energy">
+            <span class="ops-tag">Energía & Gas</span>
+          </div>
+          <div class="ops-body">
+            <h3>Senex Energy Transition</h3>
+            <p>Proyectos de gas natural y tecnologías de transición destinadas a abastecer de manera confiable al tejido industrial australiano.</p>
+          </div>
+        </div>
+
+        <div class="ops-card">
+          <div class="ops-img">
+            <img src="./img/ingenieurs-supervision-operations.png" alt="Supervisión e Ingeniería">
+            <span class="ops-tag">Ingeniería</span>
+          </div>
+          <div class="ops-body">
+            <h3>Ingeniería y Seguridad Operativa</h3>
+            <p>Supervisión continua con estándares internacionales de prevención, automatización y cuidado riguroso del medio ambiente.</p>
+          </div>
+        </div>
+
+        <div class="ops-card">
+          <div class="ops-img">
+            <img src="./img/kidman-artisanat-agro-pastoral.png" alt="S. Kidman & Co">
+            <span class="ops-tag">Ganadería & Agro</span>
+          </div>
+          <div class="ops-body">
+            <h3>S. Kidman & Co Pastoral</h3>
+            <p>Una de las empresas ganaderas históricas más célebres de Australia, productora de carne bovina premium y calzado artesanal de alta durabilidad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. CONTACTO Y UBICACIÓN -->
+  <section class="section section-contact" id="contacto">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag"><i class="fa-solid fa-headset"></i> Contacto Oficial</div>
+        <h2 class="section-title">Contáctenos</h2>
+        <p class="section-subtitle">
+          Para cualquier consulta relacionada con los programas de donaciones, relaciones institucionales o solicitudes de prensa.
+        </p>
+      </div>
+
+      <div class="contact-wrapper">
+        <div class="contact-info-card">
+          <h3>Hancock Prospecting PTY LTD</h3>
+          <p class="contact-sub">Sede Central y Dirección General</p>
+
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <strong>Dirección física oficial:</strong>
+              <p>28-42 Ventnor Avenue, West Perth, WA 6005, Australia</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <strong>Correo electrónico oficial de secretaría:</strong>
+              <p><a href="mailto:prospectinghancock0@gmail.com">prospectinghancock0@gmail.com</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div>
+              <strong>Línea WhatsApp Oficial:</strong>
+              <p><a href="https://wa.me/33757754014" target="_blank">+33 7 57 75 40 14</a></p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fa-solid fa-id-card"></i>
+            <div>
+              <strong>Identificación Legal:</strong>
+              <p>ACN: 008 676 417 | ABN: 69 008 676 417</p>
+              <p>Presidenta Ejecutiva: Gina Rinehart</p>
+            </div>
+          </div>
+
+          <div class="wa-direct-banner">
+            <i class="fa-brands fa-whatsapp wa-icon-big"></i>
+            <div>
+              <strong>Línea Directa de Donaciones</strong>
+              <p>Consulte al instante el estado de su expediente con nuestra secretaría.</p>
+              <a href="https://wa.me/33757754014" target="_blank" class="btn-whatsapp-small mt-2">
+                Abrir WhatsApp (+33 757754014)
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-card">
+          <h3>Enviar Mensaje Institucional</h3>
+          <form id="generalContactForm" onsubmit="handleContactSubmit(event)">
+            <div class="form-group">
+              <label for="contactNom">Nombre y Apellido *</label>
+              <input type="text" id="contactNom" required placeholder="Su nombre completo">
+            </div>
+
+            <div class="form-group">
+              <label for="contactEmail">Correo electrónico *</label>
+              <input type="email" id="contactEmail" required placeholder="su@correo.com">
+            </div>
+
+            <div class="form-group">
+              <label for="contactSujet">Asunto de la comunicación *</label>
+              <input type="text" id="contactSujet" required placeholder="Ej: Prensa, Consulta sobre programas de donación...">
+            </div>
+
+            <div class="form-group">
+              <label for="contactMsg">Mensaje *</label>
+              <textarea id="contactMsg" rows="5" required placeholder="Redacte los detalles de su mensaje aquí..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-navy btn-block">
+              <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje Web
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. FOOTER (Fond #0F2A43, texte #E7E5E4, liens #E8DCC0) -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col brand-col">
+          <img src="./img/fundacion-prospeccion-hancock-logo-sans-cadrant.png" alt="Hancock Logo" class="footer-logo">
+          <p>Hancock Prospecting PTY LTD es un referente de la industria minera y agropecuaria y el mayor motor privado de mecenazgo social en Australia.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#causas">Nuestras Causas</a></li>
+            <li><a href="#impacto">Impacto & Mapa</a></li>
+            <li><a href="#don-mecenat">Solicitud de Donación</a></li>
+            <li><a href="#galeria">Galería Oficial</a></li>
+            <li><a href="#actualidades">Actualidades</a></li>
+            <li><a href="#prensa">Prensa & Medios</a></li>
+            <li><a href="#nosotros">Sobre Nosotros</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Subvenciones & Donaciones</h4>
+          <p>Toda solicitud es evaluada con rigor por nuestra secretaría a través del canal oficial de WhatsApp.</p>
+          <a href="#don-mecenat" class="btn btn-sm btn-don mt-2">
+            <i class="fa-solid fa-hand-holding-heart"></i> Formulario de Donación
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Información Legal</h4>
+          <ul>
+            <li><a href="#" onclick="openLegalModal('mentions'); return false;">Aviso Legal</a></li>
+            <li><a href="#" onclick="openLegalModal('confidentialite'); return false;">Política de Privacidad</a></li>
+            <li><a href="#" onclick="openLegalModal('cgu'); return false;">Términos de Uso</a></li>
+            <li><a href="#" onclick="openLegalModal('cookies'); return false;">Gestión de Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Hancock Prospecting PTY LTD. Todos los derechos reservados. ACN 008 676 417 | ABN 69 008 676 417</p>
+        <p>Contacto Secretaría: <a href="mailto:prospectinghancock0@gmail.com">prospectinghancock0@gmail.com</a> | WhatsApp: +33 7 57 75 40 14</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Widget Button -->
+  <div class="wa-float-btn-wrapper">
+    <div class="wa-float-tooltip">¿Consultas? Escríbanos por WhatsApp</div>
+    <a href="https://wa.me/33757754014?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20las%20donaciones%20de%20Hancock%20Prospecting." target="_blank" class="wa-float-btn" aria-label="Contacto WhatsApp Directo">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Lightbox Modal for Gallery Images -->
+  <div class="modal-backdrop" id="galleryModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeGalleryModal()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="text-center">
+        <img id="galleryModalImg" src="" alt="" style="max-height: 72vh; border-radius: var(--radius-md); margin-bottom: 1.25rem; object-fit: contain; width: 100%;">
+        <h3 id="galleryModalTitle" style="color: var(--color-primary); font-family: var(--font-heading); font-size: 1.25rem;"></h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legal Documents Modal -->
+  <div class="modal-backdrop" id="legalModal">
+    <div class="modal-card modal-card-large">
+      <button class="modal-close" onclick="closeLegalModal()"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <h3 id="legalModalTitle">Documento Legal</h3>
+      </div>
+      <div class="modal-body legal-content" id="legalModalBody">
+        <!-- Content inserted dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="container cookie-container">
+      <p><i class="fa-solid fa-cookie-bite" style="color: var(--color-primary); margin-right: 0.4rem;"></i> Utilizamos únicamente cookies técnicas estrictamente necesarias para el funcionamiento del portal y la comunicación segura vía WhatsApp.</p>
+      <div class="cookie-btns">
+        <button class="btn btn-navy btn-sm" onclick="acceptCookies()">Aceptar Todo</button>
+        <button class="btn btn-outline btn-sm" onclick="acceptCookies()">Solo Necesarias</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet.js Interactive Map Script -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
