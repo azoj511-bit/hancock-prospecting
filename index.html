@@ -34,6 +34,9 @@
 </head>
 <body>
 
+  <!-- Barre de progression de défilement institutionnelle -->
+  <div id="scrollProgress" class="scroll-progress-bar"></div>
+
   <!-- Top Announcement / Info Bar -->
   <div class="top-bar">
     <div class="container top-bar-content">
@@ -102,19 +105,23 @@
     </div>
   </header>
 
-  <!-- 1. HERO SECTION (Fond #FBFAF8, Titre en #163A5C, filet #E8DCC0 de 3px, sous-titre en #44403C) -->
-  <section class="hero-section" id="inicio">
+  <!-- 1. HERO SECTION DYNAMIQUE (Fond photographique immersif au choix avec overlay de prestige) -->
+  <section class="hero-section hero-dynamic" id="inicio">
+    <!-- Conteneur d'image de fond dynamique avec transition fluide -->
+    <div class="hero-backdrop-image" id="heroDynamicBg"></div>
+    <div class="hero-backdrop-overlay"></div>
+
     <div class="container hero-container">
       
-      <!-- Insigne officiel de la fondation -->
+      <!-- Insigne officiel de la fondation avec micro-badge doré -->
       <div class="hero-emblem-wrapper">
         <img src="./img/fundacion-prospeccion-hancock-logo-sans-cadrant.png" alt="Fundación Hancock" class="hero-emblem-logo">
-        <span class="hero-emblem-text">Fundación Hancock Prospecting — Acción Social y Filantropía Global</span>
+        <span class="hero-emblem-text"><i class="fa-solid fa-certificate" style="color: #E8DCC0; margin-right: 0.35rem;"></i> Fundación Hancock Prospecting — Acción Social &amp; Filantropía Global</span>
       </div>
 
       <h1 class="hero-title">Construyendo el Futuro Minero y Apoyando a las Comunidades</h1>
       
-      <!-- Règle d'or : Filet doré #E8DCC0 de 3 px sous le titre comme seul rappel doré -->
+      <!-- Filet doré #E8DCC0 de 3 px sous le titre -->
       <div class="hero-title-divider"></div>
 
       <p class="hero-lead">
@@ -123,51 +130,47 @@
 
       <div class="hero-buttons">
         <a href="#don-mecenat" class="btn btn-don btn-large">
-          <i class="fa-brands fa-whatsapp"></i> Enviar Solicitud de Donación por WhatsApp
+          <i class="fa-brands fa-whatsapp"></i> Solicitar Donación por WhatsApp
         </a>
-        <a href="#impacto" class="btn btn-outline-navy btn-large">
+        <a href="#impacto" class="btn btn-hero-navy btn-large">
           <i class="fa-solid fa-map-location-dot"></i> Ver Mapa de Impacto Interactivo
         </a>
-        <a href="#galeria" class="btn btn-outline btn-large">
-          <i class="fa-solid fa-images"></i> Explorar Galería
+        <a href="#galeria" class="btn btn-hero-glass btn-large">
+          <i class="fa-solid fa-images"></i> Explorar Galería Oficial (27)
         </a>
       </div>
 
-      <!-- Image contextuelle héroïque (Flotte minière Roy Hill & exploitation de classe mondiale) -->
-      <div class="hero-visual-showcase">
-        <img src="./img/mine-roy-hill-flotte.png" alt="Flota de camiones mineros Roy Hill en Pilbara">
-        <div class="hero-visual-caption">
-          <div>
-            <h3>Roy Hill & Cuenca de Pilbara (Australia Occidental)</h3>
-            <p>Infraestructura industrial de vanguardia y pilar de la redistribución filantrópica nacional.</p>
-          </div>
-          <a href="#operaciones" class="btn btn-sm btn-outline-navy" style="background: rgba(255,255,255,0.9);">
-            Ver Operaciones <i class="fa-solid fa-arrow-right"></i>
-          </a>
+      <!-- Contrôleur de fond immersif (Carte blanche accordée par l'utilisateur pour changer l'ambiance visuelle) -->
+      <div class="hero-bg-switcher">
+        <span class="switcher-label"><i class="fa-solid fa-camera"></i> Vista panorámica:</span>
+        <div class="switcher-buttons">
+          <button class="switcher-btn active" onclick="switchHeroBg(0)" title="Flota Roy Hill (Pilbara)"><i class="fa-solid fa-truck-monster"></i> 1. Operación Minera</button>
+          <button class="switcher-btn" onclick="switchHeroBg(1)" title="Mecenazgo Olímpico (París 2024)"><i class="fa-solid fa-medal"></i> 2. Mécénat Olímpico</button>
+          <button class="switcher-btn" onclick="switchHeroBg(2)" title="Sede Central Hancock"><i class="fa-solid fa-building-flag"></i> 3. Sede Corporativa</button>
         </div>
       </div>
 
-      <!-- Key Figures Grid (Cartes blanches sur fond #FBFAF8 avec bordure fine) -->
-      <div class="hero-stats">
+      <!-- Key Figures Grid (Cartes en verre dépoli glassmorphism avec bordure fine dorée) -->
+      <div class="hero-stats hero-stats-glass">
         <div class="stat-card">
           <div class="stat-icon"><i class="fa-solid fa-trophy"></i></div>
           <div class="stat-number">$1,272,500 AUD</div>
-          <div class="stat-label">Incentivo directo a atletas olímpicos australianos</div>
+          <div class="stat-label">Incentivo directo a atletas olímpicos</div>
         </div>
         <div class="stat-card">
           <div class="stat-icon"><i class="fa-solid fa-handshake"></i></div>
           <div class="stat-number">+100</div>
-          <div class="stat-label">Proyectos comunitarios financiados activamente</div>
+          <div class="stat-label">Proyectos comunitarios financiados</div>
         </div>
         <div class="stat-card">
           <div class="stat-icon"><i class="fa-solid fa-medal"></i></div>
           <div class="stat-number">N°1</div>
-          <div class="stat-label">Mayor mecenas privado del deporte australiano</div>
+          <div class="stat-label">Mayor mecenas privado del deporte</div>
         </div>
         <div class="stat-card">
           <div class="stat-icon"><i class="fa-solid fa-landmark"></i></div>
           <div class="stat-number">1955</div>
-          <div class="stat-label">Fundación y legado de independencia nacional</div>
+          <div class="stat-label">Legado de independencia nacional</div>
         </div>
       </div>
 
@@ -338,42 +341,45 @@
         </div>
       </div>
 
-      <!-- CARTE DES PROJETS ACTIFS (LEAFLET DYNAMIC MAP RECONÇU) -->
+      <!-- MAPA INTERACTIVO GLOBAL DE IMPACTO (LEAFLET DYNAMIC MAP) -->
       <div class="leaflet-map-card">
         <div class="map-section-header">
-          <h3><i class="fa-solid fa-earth-americas"></i> Carte des Projets Actifs / Mapa de Proyectos Activos</h3>
-          <p>Explore las intervenciones y programas de dotación filantrópica haciendo clic en los puntos del mapa.</p>
+          <div class="map-header-top">
+            <h3><i class="fa-solid fa-earth-americas"></i> Mapa Global de Proyectos e Intervenciones Activas</h3>
+            <span class="map-live-badge"><span class="live-dot"></span> Red Global Activa</span>
+          </div>
+          <p>Explore las intervenciones y programas de dotación filantrópica haciendo clic en los puntos del mapa o utilizando los filtros correspondientes.</p>
         </div>
 
         <!-- FILTER CONTROLS BAR (Sobre, claire, responsive) -->
         <div class="map-filter-bar">
           <div class="filter-select-group">
-            <label for="mapFilterCause">ÁREA DEL PROYECTO</label>
+            <label for="mapFilterCause"><i class="fa-solid fa-layer-group"></i> Área del Proyecto</label>
             <select id="mapFilterCause" onchange="updateLeafletMapMarkers()">
-              <option value="all">Todas las causas / Tous les domaines</option>
-              <option value="salud">Investigación Médica & Oncología</option>
-              <option value="educacion">Educación & Becas Universitarias</option>
-              <option value="deporte">Deporte & Salud Olímpica</option>
-              <option value="comunidad">Desarrollo Comunitario & Rural</option>
+              <option value="all">Todas las áreas de impacto</option>
+              <option value="salud">Investigación Médica &amp; Oncología</option>
+              <option value="educacion">Educación &amp; Becas Universitarias</option>
+              <option value="deporte">Deporte &amp; Salud Olímpica</option>
+              <option value="comunidad">Desarrollo Comunitario &amp; Rural</option>
             </select>
           </div>
 
           <div class="filter-select-group">
-            <label for="mapFilterCountry">PAÍS / TERRITORIO</label>
+            <label for="mapFilterCountry"><i class="fa-solid fa-globe"></i> País / Territorio</label>
             <select id="mapFilterCountry" onchange="updateLeafletMapMarkers()">
-              <option value="all">Todos los países / Tous les pays</option>
-              <option value="australia">Australia</option>
-              <option value="espana">España</option>
-              <option value="mexico">México</option>
-              <option value="colombia">Colombia</option>
-              <option value="francia">Francia</option>
+              <option value="all">Todos los territorios</option>
+              <option value="australia">Australia (Sede Global)</option>
+              <option value="espana">España (Alianza Médica)</option>
+              <option value="mexico">México (Salud Rural)</option>
+              <option value="colombia">Colombia (Educación)</option>
+              <option value="francia">Francia (Juegos Olímpicos)</option>
             </select>
           </div>
 
           <div class="filter-select-group">
-            <label for="mapFilterStatus">ESTATUTO DEL PROGRAMA</label>
+            <label for="mapFilterStatus"><i class="fa-solid fa-signal"></i> Estado del Programa</label>
             <select id="mapFilterStatus" onchange="updateLeafletMapMarkers()">
-              <option value="all">Todos los estatutos / Tous statuts</option>
+              <option value="all">Todos los estados</option>
               <option value="activo">Proyectos Activos</option>
               <option value="alianza">Alianzas Internacionales</option>
             </select>
@@ -637,13 +643,22 @@
               <label for="donConsent">Acepto la política de privacidad y autorizo el procesamiento de mis datos. Certifico bajo juramento que toda la información provista es verídica.</label>
             </div>
 
-            <div class="wizard-actions">
+            <div class="wizard-actions wizard-actions-expediente">
               <button type="button" class="btn btn-outline" onclick="prevDonStep(2)">
                 <i class="fa-solid fa-arrow-left"></i> Modificar datos
               </button>
+
+              <button type="button" class="btn btn-outline-navy" onclick="printDonExpediente()">
+                <i class="fa-solid fa-print"></i> Imprimir / Guardar PDF Oficial
+              </button>
+
+              <button type="button" class="btn btn-outline" onclick="copyDonSummaryText()">
+                <i class="fa-solid fa-copy"></i> Copiar Texto
+              </button>
+
               <!-- Bouton de soumission final doré unique -->
               <button type="button" class="btn btn-don btn-whatsapp-send" onclick="sendDonToWhatsApp()">
-                <i class="fa-brands fa-whatsapp"></i> Transmitir Solicitud Oficial (+33 757754014)
+                <i class="fa-brands fa-whatsapp"></i> Transmitir Solicitud Oficial (+33 7 57 75 40 14)
               </button>
             </div>
           </div>
@@ -863,126 +878,178 @@
         </div>
       </div>
 
-      <!-- COMITÉ EJECUTIVO -->
-      <div class="team-section-block">
+      <!-- SECCIÓN EQUIPO & GOBIERNO CORPORATIVO (CONFORME AL PLIEGO DE CONDICIONES F2, F3, F4, F5) -->
+      <div class="team-section-block" id="equipo">
         <div class="section-header text-center" style="margin-bottom: 2.5rem; margin-top: 4rem;">
-          <div class="section-tag"><i class="fa-solid fa-users-gear"></i> Gobierno Corporativo</div>
-          <h2 class="section-title">Comité Ejecutivo</h2>
-          <p class="section-subtitle">El Comité Ejecutivo de Hancock Prospecting es responsable de la gestión de la sociedad y de sus actividades.</p>
+          <div class="section-tag"><i class="fa-solid fa-users-gear"></i> Conozca Nuestro Equipo &amp; Dirección</div>
+          <h2 class="section-title">Comité Ejecutivo &amp; Equipo Dirigente</h2>
+          <p class="section-subtitle">Liderazgo estratégico, integridad y excelencia técnica al servicio del desarrollo industrial y el progreso comunitario.</p>
         </div>
 
-        <div class="team-grid team-grid-4">
-          <div class="team-card">
+        <!-- Barra de búsqueda y filtros por departamento -->
+        <div class="team-controls-bar">
+          <div class="team-search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="teamSearchInput" placeholder="Buscar por nombre, cargo o departamento..." oninput="filterTeamMembers()">
+          </div>
+
+          <div class="team-filter-tabs" id="teamFilterGroup">
+            <button class="team-tab-btn active" onclick="filterTeamCategory('all', this)">Todos (9)</button>
+            <button class="team-tab-btn" onclick="filterTeamCategory('comite', this)">Comité Ejecutivo</button>
+            <button class="team-tab-btn" onclick="filterTeamCategory('operaciones', this)">Minería &amp; Operaciones</button>
+            <button class="team-tab-btn" onclick="filterTeamCategory('energia', this)">Energía (Senex)</button>
+            <button class="team-tab-btn" onclick="filterTeamCategory('agricultura', this)">Agricultura &amp; Kidman</button>
+            <button class="team-tab-btn" onclick="filterTeamCategory('finanzas', this)">Finanzas &amp; Proyectos</button>
+          </div>
+        </div>
+
+        <!-- Grille unifiée et filtrable de l'équipe -->
+        <div class="team-grid team-unified-grid" id="teamUnifiedGrid">
+          
+          <!-- Gina Rinehart -->
+          <div class="team-card" data-category="comite" data-name="Gina Rinehart" data-role="Presidenta Ejecutiva">
             <div class="team-photo-wrapper">
               <img src="./img/comite-gina-rinehart.png" alt="Mrs. Gina Rinehart AO" loading="lazy">
+              <span class="team-dept-badge">Presidencia</span>
             </div>
             <div class="team-card-body">
               <h4>Mrs. Gina Rinehart AO</h4>
               <span class="team-role">Presidenta Ejecutiva — Hancock Prospecting, Roy Hill, S. Kidman &amp; Co</span>
-              <p>Gina Rinehart es una figura prominente de las industrias minera y agrícola en Australia. Desde que asumió la presidencia ejecutiva de Hancock Prospecting en 1992, transformó al grupo en una de las compañías mineras privadas más exitosas del mundo.</p>
+              <p>Figura prominente de la minería y agricultura australianas. Ha transformado a Hancock en el grupo privado más exitoso de Australia y mayor mecenas individual.</p>
+              <button class="btn-team-bio" onclick="openTeamModal(1)">
+                <i class="fa-solid fa-address-card"></i> Ver Biografía &amp; Logros
+              </button>
             </div>
           </div>
 
-          <div class="team-card">
+          <!-- Tad Watroba -->
+          <div class="team-card" data-category="comite operaciones" data-name="Tad Watroba" data-role="Director Ejecutivo">
             <div class="team-photo-wrapper">
               <img src="./img/comite-tad-watroba.png" alt="Mr. Tad Watroba" loading="lazy">
+              <span class="team-dept-badge">Comité Ejecutivo</span>
             </div>
             <div class="team-card-body">
               <h4>Mr. Tad Watroba</h4>
               <span class="team-role">Director Ejecutivo</span>
-              <p>Cincuenta años de experiencia en minería a cielo abierto y subterránea, abarcando operaciones mineras, planificación, estudios de viabilidad, evaluación financiera de proyectos y negociaciones estratégicas.</p>
+              <p>50 años de experiencia en minería a cielo abierto y subterránea, viabilidad de megaproyectos y negociaciones estratégicas globales.</p>
+              <button class="btn-team-bio" onclick="openTeamModal(2)">
+                <i class="fa-solid fa-address-card"></i> Ver Biografía &amp; Logros
+              </button>
             </div>
           </div>
 
-          <div class="team-card">
+          <!-- Jay Newby -->
+          <div class="team-card" data-category="comite finanzas" data-name="Jay Newby" data-role="Director Ejecutivo">
             <div class="team-photo-wrapper">
               <img src="./img/comite-jay-newby.png" alt="Mr. Jay Newby" loading="lazy">
+              <span class="team-dept-badge">Comité Ejecutivo</span>
             </div>
             <div class="team-card-body">
               <h4>Mr. Jay Newby</h4>
               <span class="team-role">Director Ejecutivo</span>
-              <p>Contador colegiado admitido en el Instituto de Contadores Públicos de Australia en 1988. Amplia trayectoria en finanzas corporativas, contabilidad y fiscalidad, así como fusiones y adquisiciones en el sector minero.</p>
+              <p>Contador colegiado (ICAA 1988). Experto en finanzas corporativas, auditoría fiscal internacional y adquisiciones del sector minero.</p>
+              <button class="btn-team-bio" onclick="openTeamModal(3)">
+                <i class="fa-solid fa-address-card"></i> Ver Biografía &amp; Logros
+              </button>
             </div>
           </div>
 
-          <div class="team-card">
+          <!-- Garry Korte -->
+          <div class="team-card" data-category="comite" data-name="Garry Korte" data-role="Director General CEO">
             <div class="team-photo-wrapper">
               <img src="./img/comite-garry-korte.png" alt="Mr. Garry Korte" loading="lazy">
+              <span class="team-dept-badge">Dirección General</span>
             </div>
             <div class="team-card-body">
               <h4>Mr. Garry Korte</h4>
-              <span class="team-role">Director General (CEO)</span>
-              <p>Más de 30 años de experiencia en la industria minera. Se incorporó a Roy Hill como director financiero en 2012, liderando el financiamiento de proyectos por 7.200 millones de dólares, antes de ser nombrado CEO del Grupo en 2016.</p>
+              <span class="team-role">Director General (CEO del Grupo)</span>
+              <p>Más de 30 años en la minería. Lideró la financiación histórica de 7.200 millones de USD para Roy Hill antes de asumir como CEO.</p>
+              <button class="btn-team-bio" onclick="openTeamModal(4)">
+                <i class="fa-solid fa-address-card"></i> Ver Biografía &amp; Logros
+              </button>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- ÉQUIPE DIRIGEANTE -->
-      <div class="team-section-block">
-        <div class="section-header text-center" style="margin-bottom: 2.5rem; margin-top: 4rem;">
-          <div class="section-tag"><i class="fa-solid fa-sitemap"></i> Dirección Ejecutiva</div>
-          <h2 class="section-title">Equipo Dirigente</h2>
-          <p class="section-subtitle">Un equipo comprometido al servicio del desarrollo social y de la transparencia.</p>
-        </div>
-
-        <div class="team-grid team-grid-2" style="margin-bottom: 2rem;">
-          <div class="team-card team-card-large">
-            <div class="team-photo-wrapper team-photo-large">
+          <!-- Stuart Johnston -->
+          <div class="team-card" data-category="energia" data-name="Stuart Johnston" data-role="CEO Hancock Energy">
+            <div class="team-photo-wrapper">
               <img src="./img/equipe-stuart-johnston.png" alt="Stuart Johnston" loading="lazy">
+              <span class="team-dept-badge">Energía &amp; Gas</span>
             </div>
             <div class="team-card-body">
               <h4>Stuart Johnston</h4>
               <span class="team-role">CEO de Hancock Energy</span>
-              <p>Más de 30 años de experiencia en corporaciones energéticas y de infraestructura internacionales y australianas. Ex CEO de Squadron Energy y del gasoducto Dampier-Bunbury (DBP).</p>
+              <p>Más de 30 años en empresas de gas, infraestructuras y transición energética en Australia y el ámbito internacional.</p>
+              <button class="btn-team-bio" onclick="openTeamModal(5)">
+                <i class="fa-solid fa-address-card"></i> Ver Biografía &amp; Logros
+              </button>
             </div>
           </div>
 
-          <div class="team-card team-card-large">
-            <div class="team-photo-wrapper team-photo-large">
+          <!-- Adam Giles -->
+          <div class="team-card" data-category="agricultura" data-name="Adam Giles" data-role="CEO Hancock Agriculture">
+            <div class="team-photo-wrapper">
               <img src="./img/equipe-adam-giles.png" alt="Adam Giles" loading="lazy">
+              <span class="team-dept-badge">Agro &amp; Kidman</span>
             </div>
             <div class="team-card-body">
               <h4>Adam Giles</h4>
-              <span class="team-role">CEO de Hancock Agriculture</span>
-              <p>Adam Giles fue el 10º Ministro Principal del Territorio del Norte (2013-2016). Cuenta con amplia experiencia en administración pública de alto nivel y gestión del desarrollo agropecuario.</p>
+              <span class="team-role">CEO de Hancock Agriculture &amp; S. Kidman &amp; Co</span>
+              <p>10º Ministro Principal del Territorio del Norte (2013-2016). Destacada gestión pública y liderazgo en desarrollo rural y ganadero.</p>
+              <button class="btn-team-bio" onclick="openTeamModal(6)">
+                <i class="fa-solid fa-address-card"></i> Ver Biografía &amp; Logros
+              </button>
             </div>
           </div>
-        </div>
 
-        <div class="team-grid team-grid-3">
-          <div class="team-card">
+          <!-- Gerhard Veldsman -->
+          <div class="team-card" data-category="operaciones" data-name="Gerhard Veldsman" data-role="CEO Operaciones">
             <div class="team-photo-wrapper">
               <img src="./img/equipe-gerhard-veldsman.png" alt="Gerhard Veldsman" loading="lazy">
+              <span class="team-dept-badge">Operaciones</span>
             </div>
             <div class="team-card-body">
               <h4>Gerhard Veldsman</h4>
-              <span class="team-role">CEO de Operaciones</span>
-              <p>Gerhard posee una vasta experiencia en la industria minera internacional en diversas materias primas, con responsabilidad directa sobre las operaciones de Roy Hill y Atlas Iron.</p>
+              <span class="team-role">CEO de Operaciones Mineras</span>
+              <p>Responsable directo de las operaciones extractivas de clase mundial de Roy Hill y Atlas Iron en Pilbara.</p>
+              <button class="btn-team-bio" onclick="openTeamModal(7)">
+                <i class="fa-solid fa-address-card"></i> Ver Biografía &amp; Logros
+              </button>
             </div>
           </div>
 
-          <div class="team-card">
+          <!-- Sanjiv Manchanda -->
+          <div class="team-card" data-category="finanzas operaciones" data-name="Sanjiv Manchanda" data-role="CEO Proyectos">
             <div class="team-photo-wrapper">
               <img src="./img/equipe-sanjiv-manchanda.png" alt="Sanjiv Manchanda" loading="lazy">
+              <span class="team-dept-badge">Proyectos</span>
             </div>
             <div class="team-card-body">
               <h4>Sanjiv Manchanda</h4>
-              <span class="team-role">CEO de Proyectos</span>
-              <p>Sanjiv supervisa la cartera integral de proyectos de Hancock Prospecting, incluyendo grandes iniciativas de mineral de hierro en Pilbara y expansiones estratégicas.</p>
+              <span class="team-role">CEO de Proyectos Estratégicos</span>
+              <p>Supervisa la cartera de expansiones mineras, infraestructuras portuarias y desarrollos de ingeniería a gran escala.</p>
+              <button class="btn-team-bio" onclick="openTeamModal(8)">
+                <i class="fa-solid fa-address-card"></i> Ver Biografía &amp; Logros
+              </button>
             </div>
           </div>
 
-          <div class="team-card">
+          <!-- Jabez Huang -->
+          <div class="team-card" data-category="finanzas" data-name="Jabez Huang" data-role="Director Financiero CFO">
             <div class="team-photo-wrapper">
               <img src="./img/equipe-jabez-huang.png" alt="Jabez Huang" loading="lazy">
+              <span class="team-dept-badge">Finanzas</span>
             </div>
             <div class="team-card-body">
               <h4>Jabez Huang</h4>
               <span class="team-role">Director Financiero (CFO)</span>
-              <p>Jabez cuenta con más de 20 años de experiencia en información financiera, fiscalidad corporativa, consultoría y tesorería en el sector minero australiano.</p>
+              <p>Más de 20 años de experiencia en información contable, auditoría corporativa y tesorería en el sector de recursos minerales.</p>
+              <button class="btn-team-bio" onclick="openTeamModal(9)">
+                <i class="fa-solid fa-address-card"></i> Ver Biografía &amp; Logros
+              </button>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -1132,9 +1199,14 @@
               <textarea id="contactMsg" rows="5" required placeholder="Redacte los detalles de su mensaje aquí..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-navy btn-block">
-              <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje Web
-            </button>
+            <div class="contact-actions-grid">
+              <button type="submit" class="btn btn-navy">
+                <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje Institucional
+              </button>
+              <button type="button" class="btn btn-wa-direct" onclick="sendContactViaWhatsApp()">
+                <i class="fa-brands fa-whatsapp"></i> Transmitir vía WhatsApp
+              </button>
+            </div>
           </form>
         </div>
       </div>
@@ -1190,29 +1262,58 @@
     </div>
   </footer>
 
+  <!-- Floating Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top-btn" onclick="scrollToTop()" aria-label="Volver arriba">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
   <!-- Floating WhatsApp Widget Button -->
   <div class="wa-float-btn-wrapper">
-    <div class="wa-float-tooltip">¿Consultas? Escríbanos por WhatsApp</div>
+    <div class="wa-float-tooltip">¿Consultas oficiales? Escríbanos por WhatsApp</div>
     <a href="https://wa.me/33757754014?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20las%20donaciones%20de%20Hancock%20Prospecting." target="_blank" class="wa-float-btn" aria-label="Contacto WhatsApp Directo">
       <i class="fa-brands fa-whatsapp"></i>
     </a>
   </div>
 
-  <!-- Lightbox Modal for Gallery Images -->
+  <!-- Lightbox Modal for Gallery Images (Con flechas de navegación e indicador) -->
   <div class="modal-backdrop" id="galleryModal">
-    <div class="modal-card">
-      <button class="modal-close" onclick="closeGalleryModal()"><i class="fa-solid fa-xmark"></i></button>
-      <div class="text-center">
-        <img id="galleryModalImg" src="" alt="" style="max-height: 72vh; border-radius: var(--radius-md); margin-bottom: 1.25rem; object-fit: contain; width: 100%;">
-        <h3 id="galleryModalTitle" style="color: var(--color-primary); font-family: var(--font-heading); font-size: 1.25rem;"></h3>
+    <div class="modal-card modal-gallery-card">
+      <button class="modal-close" onclick="closeGalleryModal()" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div class="gallery-modal-body">
+        <button class="gallery-nav-btn gallery-prev" onclick="prevGalleryImage()" aria-label="Imagen anterior">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="gallery-modal-display">
+          <img id="galleryModalImg" src="" alt="" loading="lazy">
+          <div class="gallery-modal-footer">
+            <h3 id="galleryModalTitle"></h3>
+            <span id="galleryModalCounter" class="gallery-modal-counter"></span>
+          </div>
+        </div>
+
+        <button class="gallery-nav-btn gallery-next" onclick="nextGalleryImage()" aria-label="Imagen siguiente">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
       </div>
     </div>
   </div>
 
-  <!-- Legal Documents Modal -->
+  <!-- Team Member Biography Modal (Conforme a la especificación F5 del pliego de condiciones) -->
+  <div class="modal-backdrop" id="teamModal">
+    <div class="modal-card modal-card-large">
+      <button class="modal-close" onclick="closeTeamModal()" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+      <div class="team-modal-content" id="teamModalBody">
+        <!-- Rellenado dinámicamente -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Legal Documents Modal (Textos 100% en español conforme a los estándares australianos) -->
   <div class="modal-backdrop" id="legalModal">
     <div class="modal-card modal-card-large">
-      <button class="modal-close" onclick="closeLegalModal()"><i class="fa-solid fa-xmark"></i></button>
+      <button class="modal-close" onclick="closeLegalModal()" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
       <div class="modal-header">
         <h3 id="legalModalTitle">Documento Legal</h3>
       </div>
@@ -1221,6 +1322,9 @@
       </div>
     </div>
   </div>
+
+  <!-- Toast Notification Container (Reemplazo moderno de alert()) -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
 
   <!-- Cookie Banner -->
   <div class="cookie-banner" id="cookieBanner">
