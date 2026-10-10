@@ -1,4 +1,4 @@
-﻿# Cahier des charges — Site « Rencontrez notre équipe »
+# Cahier des charges — Site « Rencontrez notre équipe »
 ## Hancock Prospecting PTY LTD
 
 Version 1.0 — Document de référence projet
@@ -144,7 +144,7 @@ Hancock Prospecting PTY LTD
 Forme juridique : Proprietary Limited Company (Australie)
 ACN / ABN : *[008676417/69008676417]*
 Siège social : *[Western Australia (WA 6005)]*
-Téléphone : *[+33 757754014]* — E-mail : *[ prospectinghancock0@gmail.com]*
+Téléphone : *[+30 6994068418]* — E-mail : *[ prospectinghancock0@gmail.com]*
 Directeur de la publication : *[Gina Rinehart Directrice Generale executive chairman]*
 
 **Hébergement**

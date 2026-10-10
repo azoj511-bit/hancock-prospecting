@@ -69,6 +69,9 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 body {
@@ -76,9 +79,17 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   line-height: 1.65;
+  width: 100%;
+  max-width: 100vw;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Empêcher tout débordement de texte sur toutes les largeurs d'écran */
+h1, h2, h3, h4, h5, h6, p, span, a, li, label, strong, button, td, th {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 a {
@@ -94,12 +105,14 @@ a:hover {
 ul { list-style: none; }
 img { max-width: 100%; height: auto; display: block; }
 
-/* Conteneurs et mise en page */
+/* Conteneurs et mise en page fluides */
 .container {
   width: 100%;
   max-width: 1220px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  /* Fluid padding: min 0.75rem on very small screens, up to 1.5rem on large ones */
+  padding: 0 clamp(0.75rem, 4vw, 1.5rem);
+  box-sizing: border-box;
 }
 
 .section {
@@ -138,7 +151,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: 2.25rem;
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
   font-weight: 700;
   color: var(--color-primary);
   line-height: 1.25;
@@ -295,6 +308,7 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex;
   align-items: center;
   gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
 .top-contacts a {
@@ -501,7 +515,7 @@ img { max-width: 100%; height: auto; display: block; }
 .btn-header-don {
   padding: 0.55rem 1.15rem;
   font-size: 0.88rem;
-  white-space: nowrap;
+  /* nowrap removed: allowed to wrap on very small screens */
 }
 
 .mobile-toggle {
@@ -598,7 +612,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .hero-dynamic .hero-title {
   font-family: var(--font-heading);
-  font-size: 3.4rem;
+  font-size: clamp(1.6rem, 4.5vw, 3.4rem);
   font-weight: 700;
   line-height: 1.18;
   color: #FFFFFF;
@@ -673,6 +687,9 @@ img { max-width: 100%; height: auto; display: block; }
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-full);
   backdrop-filter: blur(8px);
+  max-width: 100%;
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 .switcher-label {
@@ -681,10 +698,12 @@ img { max-width: 100%; height: auto; display: block; }
   text-transform: uppercase;
   letter-spacing: 0.8px;
   color: var(--color-accent-soft);
+  flex-shrink: 0;
 }
 
 .switcher-buttons {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.4rem;
 }
 
@@ -1328,7 +1347,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 .info-panel-main {
   flex: 1;
-  min-width: 280px;
+  min-width: 0;
+  width: 100%;
 }
 
 .info-panel-title {
@@ -2799,31 +2819,168 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN (Media Queries fluides pour Mobile, Tablette, Desktop)
+   SISTEMA DE DISEÑO RESPONSIVO INTEGRAL & FLUIDO
+   Adaptación perfecta a todas las pantallas: Móvil, Tablet, Laptop, Desktop y Ultra-Wide (4K / 21:9)
+   Garantiza que ningún texto sea cortado ni sobrepase los límites de la pantalla.
    ========================================================================== */
 
+/* 1. ULTRA-WIDE & PANTALLAS GRANDES / LARGAS (>= 1440px y >= 1920px) */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1360px;
+    padding: 0 2rem;
+  }
+  .hero-dynamic .hero-title {
+    font-size: 3.6rem;
+  }
+  .hero-dynamic .hero-lead {
+    font-size: 1.25rem;
+    max-width: 920px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1540px;
+    padding: 0 2.5rem;
+  }
+  .hero-dynamic .hero-title {
+    font-size: 4rem;
+    max-width: 1100px;
+  }
+}
+
+/* 2. LAPTOPS COMPACTAS & PANTALLAS MEDIANAS-ALTAS (1025px - 1240px) */
+@media (min-width: 1025px) and (max-width: 1240px) {
+  .navbar-container {
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+  }
+  .brand-logo {
+    gap: 0.6rem;
+  }
+  .brand-name {
+    font-size: 1.1rem;
+  }
+  .nav-menu {
+    gap: 0.75rem;
+  }
+  .nav-link {
+    font-size: 0.84rem;
+    padding: 0.35rem 0.15rem;
+  }
+  .dropdown-toggle {
+    font-size: 0.84rem;
+  }
+  .btn-header-don {
+    padding: 0.5rem 0.85rem;
+    font-size: 0.82rem;
+  }
+}
+
+/* 3. TABLETAS & PANTALLAS MEDIANAS (<= 1024px) */
 @media (max-width: 1024px) {
-  .hero-title {
+  .top-bar {
+    display: none; /* Ocultar barra superior en tabletas/móviles para máxima claridad */
+  }
+
+  .mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    max-height: calc(100vh - 68px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    background-color: var(--color-surface);
+    border-bottom: 2px solid var(--color-accent-soft);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1.25rem 1.5rem 2rem;
+    gap: 0.6rem;
+    box-shadow: 0 12px 35px rgba(15, 42, 67, 0.22);
+    display: none;
+    z-index: 1050;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-sm);
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .nav-link:hover, .nav-link.active {
+    background-color: var(--color-primary-soft);
+    color: var(--color-primary-dark);
+  }
+
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .dropdown-toggle {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .dropdown-menu-card {
+    position: static;
+    transform: none !important;
+    box-shadow: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    opacity: 1;
+    visibility: visible;
+    display: none;
+    margin-top: 0.35rem;
+    margin-left: 0.5rem;
+    background-color: var(--color-bg);
+  }
+
+  .nav-dropdown.active .dropdown-menu-card {
+    display: block;
+  }
+
+  .hero-dynamic .hero-title {
     font-size: 2.6rem;
   }
-  
+
   .hero-stats,
   .causes-grid,
   .impact-kpi-grid,
-  .ops-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+  .ops-grid,
   .actualidades-grid,
   .testimonios-grid,
   .news-grid,
   .team-grid-4,
-  .team-grid-3 {
+  .team-grid-3,
+  .team-unified-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .reassurance-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
   }
 
   .footer-top {
     grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
   
   .cause-story-card,
@@ -2832,61 +2989,42 @@ img { max-width: 100%; height: auto; display: block; }
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
+
+  .cause-story-img {
+    min-height: 280px;
+    max-height: 380px;
+  }
+
+  .step-text {
+    font-size: 0.8rem;
+  }
 }
 
+/* 4. TABLETAS PEQUEÑAS & PHABLETS (<= 768px) */
 @media (max-width: 768px) {
-  .top-bar {
-    display: none; /* Simplification mobile pour lisibilité */
+  .section {
+    padding: 4rem 0;
   }
 
-  .mobile-toggle {
-    display: block;
+  .section-header {
+    margin-bottom: 2.5rem;
   }
 
-  .nav-menu {
-    position: fixed;
-    top: 73px;
-    left: 0;
-    right: 0;
-    background-color: var(--color-surface);
-    border-bottom: 1px solid var(--color-border);
-    flex-direction: column;
-    align-items: stretch;
-    padding: 1.5rem;
-    gap: 0.75rem;
-    box-shadow: var(--shadow-dropdown);
-    display: none;
+  .section-title {
+    font-size: 1.95rem;
   }
 
-  .nav-menu.active {
-    display: flex;
+  .hero-dynamic {
+    padding: 4.5rem 0 3.5rem;
   }
 
-  .dropdown-menu-card {
-    position: static;
-    transform: none;
-    box-shadow: none;
-    border: 1px solid var(--color-border);
-    opacity: 1;
-    visibility: visible;
-    display: none;
-    margin-top: 0.5rem;
+  .hero-dynamic .hero-title {
+    font-size: 2.15rem;
   }
 
-  .nav-dropdown.active .dropdown-menu-card {
-    display: block;
-  }
-
-  .hero-title {
-    font-size: 2.1rem;
-  }
-
-  .hero-lead {
+  .hero-dynamic .hero-lead {
     font-size: 1.05rem;
-  }
-
-  .hero-visual-showcase img {
-    height: 250px;
+    margin-bottom: 1.75rem;
   }
 
   .hero-stats,
@@ -2899,46 +3037,287 @@ img { max-width: 100%; height: auto; display: block; }
   .team-grid-4,
   .team-grid-3,
   .team-grid-2,
-  .reassurance-bar {
-    grid-template-columns: 1fr;
-  }
-
+  .team-unified-grid,
+  .reassurance-bar,
   .map-filter-bar {
     grid-template-columns: 1fr;
   }
 
   .leaflet-map-element {
-    height: 360px;
+    height: 340px;
   }
 
+  /* Alineación interna segura de la línea de tiempo (nunca cortada a la izquierda) */
   .timeline-tree {
+    margin-left: 0.25rem;
     padding-left: 1.25rem;
-    margin-left: 3rem;
+    border-left: 2px solid var(--color-accent-soft);
+  }
+
+  .timeline-year {
+    position: static;
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    left: auto;
+    top: auto;
+    font-size: 0.82rem;
   }
 
   .don-wizard-card {
-    padding: 1.75rem 1.25rem;
+    padding: 1.5rem 1.15rem;
   }
 
   .form-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .step-text {
     display: none;
   }
 
+  .team-modal-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
   .footer-top {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .footer-bottom {
     flex-direction: column;
     text-align: center;
+    gap: 0.75rem;
   }
 
   .wa-float-tooltip {
+    display: none !important;
+  }
+}
+
+/* 5. TELÉFONOS INTELIGENTES / MÓVILES (<= 540px) */
+@media (max-width: 540px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .navbar-container {
+    padding: 0.65rem 0.85rem;
+    gap: 0.5rem;
+  }
+
+  .brand-logo {
+    gap: 0.5rem;
+  }
+
+  .logo-img {
+    height: 38px;
+  }
+
+  .brand-name {
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+  }
+
+  .brand-sub {
+    font-size: 0.55rem;
+    letter-spacing: 0.8px;
+  }
+
+  .nav-actions {
+    gap: 0.45rem;
+  }
+
+  .btn-header-don {
+    padding: 0.45rem 0.75rem;
+    font-size: 0.82rem;
+  }
+
+  .btn-don-label {
     display: none;
+  }
+
+  .mobile-toggle {
+    padding: 0.4rem 0.6rem;
+    font-size: 1.15rem;
+  }
+
+  .hero-dynamic {
+    padding: 3.5rem 0 2.75rem;
+  }
+
+  .hero-dynamic .hero-title {
+    font-size: 1.75rem;
+    line-height: 1.22;
+  }
+
+  .hero-emblem-wrapper {
+    width: 100%;
+    border-radius: var(--radius-md);
+    padding: 0.45rem 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .hero-emblem-logo {
+    height: 30px;
+  }
+
+  .hero-emblem-text {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1rem;
+    font-size: 0.92rem;
+  }
+
+  .hero-bg-switcher {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    border-radius: var(--radius-md);
+    padding: 0.6rem 0.8rem;
+    gap: 0.5rem;
+  }
+
+  .switcher-buttons {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .switcher-btn {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .stat-card {
+    padding: 1.25rem 0.85rem;
+  }
+
+  .stat-number {
+    font-size: 1.55rem;
+  }
+
+  .don-wizard-card {
+    padding: 1.15rem 0.85rem;
+    border-radius: var(--radius-sm);
+  }
+
+  .wizard-steps {
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .step-number {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+
+  .step-line {
+    margin: 0 0.3rem;
+  }
+
+  .wizard-actions {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+
+  .wizard-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .wizard-actions-expediente {
+    flex-direction: column-reverse;
+  }
+
+  .wizard-actions-expediente .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .contact-info-card,
+  .contact-form-card {
+    padding: 1.25rem 1rem;
+  }
+
+  .contact-actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wa-direct-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .wa-float-btn-wrapper {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .wa-float-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+
+  .back-to-top-btn {
+    bottom: 1.25rem;
+    left: 1.25rem;
+    width: 40px;
+    height: 40px;
+    font-size: 0.95rem;
+  }
+
+  .modal-card {
+    padding: 1.25rem 1rem;
+    max-width: 95vw;
+  }
+
+  .toast-container {
+    right: 1rem;
+    left: 1rem;
+    width: auto;
+    bottom: 1.25rem;
+  }
+}
+
+/* 6. TELÉFONOS ULTRA-COMPACTOS (<= 360px) */
+@media (max-width: 360px) {
+  .brand-sub {
+    display: none;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+  .hero-dynamic .hero-title {
+    font-size: 1.55rem;
+  }
+  .stat-number {
+    font-size: 1.4rem;
+  }
+  .btn {
+    padding: 0.65rem 0.85rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -3016,82 +3395,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-weight: 700;
 }
 
-/* Enhanced hero visual responsive fix */
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 1.75rem;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-  }
-
-  .hero-buttons .btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .hero-emblem-wrapper {
-    flex-wrap: wrap;
-  }
-
-  .hero-emblem-text {
-    font-size: 0.75rem;
-  }
-
-  .don-wizard-card {
-    padding: 1.25rem 1rem;
-  }
-
-  .wizard-steps {
-    gap: 0.25rem;
-  }
-
-  .step-number {
-    width: 32px;
-    height: 32px;
-    font-size: 0.85rem;
-  }
-
-  .kpi-val {
-    font-size: 1.8rem;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  }
-
-  .timeline-tree {
-    margin-left: 2.5rem;
-  }
-
-  .timeline-year {
-    left: -3.5rem;
-    font-size: 0.75rem;
-    padding: 0.2rem 0.5rem;
-  }
-
-  .contact-info-card,
-  .contact-form-card {
-    padding: 1.5rem;
-  }
-
-  .modal-card {
-    padding: 1.5rem;
-  }
-}
-
-/* Cause story card: fix image height on tablet */
-@media (max-width: 1024px) {
-  .cause-story-img {
-    min-height: 300px;
-    max-height: 380px;
-  }
-
-  .hero-visual-showcase img {
-    height: 320px;
-  }
-}
+/* Fin des utilitaires */
 
 /* ==========================================================================
    NOUVEAUX STYLES & PERFECTIONNEMENTS INSTITUTIONNELS (REV 2.0)
@@ -3659,4 +3963,225 @@ img { max-width: 100%; height: auto; display: block; }
   box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
 }
 
+/* Polish Responsive pour les composants dynamiques */
+@media (max-width: 640px) {
+  .modal-gallery-card {
+    padding: 1rem 0.75rem;
+  }
+  .gallery-modal-body {
+    position: relative;
+    justify-content: center;
+  }
+  .gallery-nav-btn {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+    background: rgba(22, 58, 92, 0.85);
+  }
+  .gallery-nav-btn:hover {
+    background: var(--color-accent);
+  }
+  .gallery-prev {
+    left: 0;
+  }
+  .gallery-next {
+    right: 0;
+  }
+  .gallery-modal-display img {
+    max-height: 52vh;
+  }
+  .team-modal-content {
+    padding: 1.25rem 0.85rem;
+  }
+}
 
+
+/* ==========================================================================
+   CORRECTIFS RESPONSIVITÉ GLOBALE — Évite tout débordement sur écrans étroits
+   ========================================================================== */
+
+/* Sécurité anti-overflow : appliquer min-width: 0 aux éléments flex/grid
+   pour éviter que les enfants débordent de leurs cellules */
+.container > *,
+[class*="-grid"] > *,
+[class*="grid-"] > * {
+  min-width: 0;
+}
+
+/* Permettre aux images et iframes d'être fluides */
+img, video, iframe, svg, canvas, audio, embed {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Texte : empêcher le dépassement horizontal sur tous les éléments */
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* NAVBAR : conteneur sécurisé contre l'overflow */
+.navbar-container {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* TOP BAR : empêcher le dépassement horizontal */
+.top-bar-content {
+  overflow: hidden;
+}
+.top-info {
+  min-width: 0;
+  overflow: hidden;
+}
+.top-info span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* HERO : titre fluide sur tous les écrans */
+.hero-dynamic .hero-lead {
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Grilles : forcer min-width: 0 pour éviter le dépassement des cellules */
+[class*="-grid"],
+[class*="grid-"],
+.causes-grid,
+.impact-kpi-grid,
+.ops-grid,
+.actualidades-grid,
+.testimonios-grid,
+.news-grid,
+.team-grid-4,
+.team-grid-3,
+.team-grid-2,
+.team-unified-grid,
+.hero-stats,
+.reassurance-bar,
+.footer-top {
+  min-width: 0;
+}
+
+/* TABLES : défilement horizontal sur petits écrans plutôt que débordement */
+table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+/* FORMULAIRES : champs fluides */
+input, textarea, select, button {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* CORRECTION ÉCRAN 769px – 900px (entre mobile et tablette) */
+@media (min-width: 769px) and (max-width: 900px) {
+  .navbar-container {
+    padding: 0.6rem 0.9rem;
+    gap: 0.6rem;
+  }
+  .nav-menu {
+    gap: 0.6rem;
+  }
+  .nav-link,
+  .dropdown-toggle {
+    font-size: 0.82rem;
+    padding: 0.35rem 0.1rem;
+  }
+  .btn-header-don {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.8rem;
+  }
+  .brand-name {
+    font-size: 1rem;
+  }
+  .brand-sub {
+    font-size: 0.6rem;
+  }
+  .logo-img {
+    height: 40px;
+  }
+}
+
+/* CORRECTION ÉCRAN 400px – 480px (grands téléphones) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.85rem;
+  }
+  .section {
+    padding: 3rem 0;
+  }
+  .section-header {
+    margin-bottom: 2rem;
+  }
+  .hero-emblem-wrapper {
+    flex-wrap: wrap;
+  }
+  .cause-story-content {
+    padding: 1.5rem 1rem;
+  }
+  .don-wizard-card {
+    padding: 1rem 0.75rem;
+  }
+  .contact-info-card,
+  .contact-form-card {
+    padding: 1rem 0.85rem;
+  }
+  .modal-card {
+    padding: 1rem 0.75rem;
+    border-radius: var(--radius-sm);
+  }
+  .team-modal-content {
+    padding: 1rem 0.75rem;
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CORRECTION ULTRA-COMPACT 320px (iPhone SE, vieux Android) */
+@media (max-width: 320px) {
+  html {
+    font-size: 14px;
+  }
+  .container {
+    padding: 0 0.6rem;
+  }
+  .brand-sub {
+    display: none;
+  }
+  .logo-img {
+    height: 32px;
+  }
+  .btn-header-don {
+    padding: 0.35rem 0.55rem;
+    font-size: 0.78rem;
+  }
+  .section-title {
+    font-size: 1.4rem;
+  }
+  .hero-dynamic .hero-title {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+  .hero-dynamic .hero-lead {
+    font-size: 0.95rem;
+  }
+  .stat-number {
+    font-size: 1.3rem;
+  }
+  .btn {
+    padding: 0.55rem 0.75rem;
+    font-size: 0.82rem;
+  }
+}

