@@ -1,30 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario Oficial de Solicitud de Donación y Patrocinio — Fundación Hancock Prospecting</title>
+  <title>Formulaire de Demande de Don — Hancock Prospecting</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #163A5C;
-      --primary-dark: #0f273e;
-      --primary-light: #205384;
-      --gold: #8C6420;
-      --gold-light: #C5A059;
-      --gold-soft: #fcf9f2;
-      --gold-border: #e2d2b5;
-      --slate-50: #f8fafc;
-      --slate-100: #f1f5f9;
-      --slate-200: #e2e8f0;
-      --slate-400: #94a3b8;
-      --slate-600: #475569;
-      --slate-800: #1e293b;
-      --slate-900: #0f172a;
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -32,917 +15,356 @@
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      color: var(--slate-900);
-      background-color: #e5e9f0;
-      line-height: 1.4;
-      font-size: 11.5px;
-      -webkit-font-smoothing: antialiased;
+      font-family: 'Plus Jakarta Sans', Arial, Helvetica, sans-serif;
+      color: #000000;
+      background-color: #f1f5f9;
+      padding: 20px 0;
+      line-height: 1.5;
+      font-size: 13.5px;
     }
 
-    /* BARRA SUPERIOR DE ACCIÓN (PANTALLA) */
-    .screen-action-bar {
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      background: linear-gradient(135deg, #163A5C 0%, #0d2338 100%);
-      color: #fff;
-      padding: 12px 20px;
+    /* BARRE D'ACTION ÉCRAN (INVISIBLE À L'IMPRESSION) */
+    .screen-bar {
+      max-width: 780px;
+      margin: 0 auto 16px;
+      background: #163A5C;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
-      border-bottom: 2px solid var(--gold-light);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
-    .screen-action-bar .info {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .screen-action-bar .info-badge {
-      background: rgba(197, 160, 89, 0.2);
-      border: 1px solid var(--gold-light);
-      color: #f7dfaa;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 4px;
-      letter-spacing: 0.5px;
-    }
-
-    .screen-action-bar .info-text {
-      font-size: 13px;
-      color: #e2e8f0;
-    }
-
-    .screen-action-bar .btn-group {
-      display: flex;
-      gap: 10px;
-    }
-
-    .btn-action {
-      cursor: pointer;
+    .screen-bar a, .screen-bar button {
       font-family: inherit;
       font-size: 13px;
       font-weight: 700;
-      padding: 9px 18px;
+      padding: 8px 16px;
       border-radius: 6px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      cursor: pointer;
       text-decoration: none;
-      transition: all 0.2s ease;
       border: none;
     }
 
-    .btn-print {
-      background: linear-gradient(135deg, #C5A059 0%, #8C6420 100%);
-      color: #fff;
-      box-shadow: 0 2px 8px rgba(140, 100, 32, 0.4);
-    }
-    .btn-print:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(140, 100, 32, 0.6);
-      filter: brightness(1.08);
+    .btn-back {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
     }
 
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-    }
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.22);
+    .btn-pdf {
+      background: #8C6420;
+      color: #ffffff;
     }
 
-    /* CONTENEDOR PRINCIPAL DOCUMENTO */
-    .document-wrapper {
-      max-width: 860px;
-      margin: 28px auto 40px;
+    /* FEUILLE BLANCHE A4 */
+    .page-sheet {
+      max-width: 780px;
+      margin: 0 auto;
       background: #ffffff;
-      padding: 36px 42px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-      border-radius: 4px;
-      position: relative;
+      padding: 40px 48px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      min-height: 1050px;
     }
 
-    /* CABECERA INSTITUCIONAL */
-    .header-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 16px;
-      border-bottom: 2px solid var(--primary);
-      padding-bottom: 14px;
-    }
-
-    .header-logo-col {
-      width: 32%;
-      vertical-align: middle;
-    }
-
-    .header-logo-img {
-      max-width: 190px;
-      height: auto;
-      display: block;
-    }
-
-    .header-title-col {
-      width: 44%;
+    /* EN-TÊTE */
+    .header {
       text-align: center;
-      vertical-align: middle;
-      padding: 0 10px;
+      margin-bottom: 24px;
     }
 
-    .header-title-col h1 {
-      font-family: 'Libre Baskerville', Georgia, serif;
-      font-size: 16px;
-      color: var(--primary);
-      font-weight: 700;
-      line-height: 1.25;
-      margin-bottom: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .header-title-col .subtitle {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-    }
-
-    .header-ref-col {
-      width: 24%;
-      text-align: right;
-      vertical-align: middle;
-      font-size: 10px;
-      color: var(--slate-600);
-      line-height: 1.45;
-    }
-
-    .ref-box {
-      background: var(--gold-soft);
-      border: 1px solid var(--gold-border);
-      border-radius: 4px;
-      padding: 6px 8px;
-      text-align: left;
-    }
-
-    .ref-box strong {
-      color: var(--primary);
-      display: block;
-      font-size: 10.5px;
-    }
-
-    /* AVISO IMPORTANTE */
-    .notice-box {
-      background: #f0f7ff;
-      border-left: 4px solid var(--primary);
-      padding: 8px 12px;
-      margin-bottom: 16px;
-      border-radius: 0 4px 4px 0;
-      font-size: 10.5px;
-      color: var(--slate-800);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .notice-box p {
-      margin: 0;
-      line-height: 1.4;
-    }
-
-    .notice-contacts {
-      white-space: nowrap;
-      text-align: right;
-      font-weight: 600;
-      color: var(--primary);
-      font-size: 10px;
-    }
-
-    .notice-contacts a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    /* SECCIONES Y ENCABEZADOS */
-    .section-block {
-      margin-bottom: 14px;
-      page-break-inside: avoid;
-    }
-
-    .section-title {
-      background: var(--primary);
-      color: #fff;
-      font-size: 11.5px;
-      font-weight: 700;
-      padding: 5px 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-radius: 2px;
+    .header-logo {
+      max-height: 55px;
       margin-bottom: 8px;
     }
 
-    .section-title .section-num {
-      background: var(--gold-light);
-      color: #fff;
-      font-size: 10px;
-      padding: 1px 6px;
-      border-radius: 2px;
+    .header-company {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      color: #163A5C;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .main-title {
+      font-size: 18px;
       font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #000000;
+      margin-top: 6px;
+    }
+
+    .sub-title {
+      font-size: 11.5px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    /* SECTION TITRES */
+    .section-header {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #000000;
+      margin: 22px 0 12px 0;
+    }
+
+    /* LIGNES AVEC POINTS STYLE DOCUMENT DE RÉFÉRENCE */
+    .form-row {
+      display: flex;
+      align-items: baseline;
+      margin-bottom: 11px;
+      font-size: 13.5px;
+    }
+
+    .form-row.two-cols {
+      display: flex;
+      gap: 20px;
+    }
+
+    .form-row.two-cols > div {
+      flex: 1;
+      display: flex;
+      align-items: baseline;
+    }
+
+    .label {
+      font-weight: 700;
+      white-space: nowrap;
       margin-right: 6px;
     }
 
-    .section-title .section-right-note {
-      font-size: 9.5px;
-      text-transform: none;
-      font-weight: 400;
-      opacity: 0.9;
+    .dots {
+      flex: 1;
+      border-bottom: 1.5px dotted #555555;
+      height: 15px;
     }
 
-    /* CAMPOS DEL FORMULARIO IMPRESO */
-    .form-grid {
-      display: grid;
-      gap: 8px;
-      margin-bottom: 4px;
+    .dots-multiline {
+      border-bottom: 1.5px dotted #555555;
+      height: 22px;
+      margin-bottom: 8px;
     }
 
-    .grid-2 { grid-template-columns: 1fr 1fr; }
-    .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
-    .grid-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
-    .grid-1-2 { grid-template-columns: 1fr 2fr; }
-    .grid-2-1 { grid-template-columns: 2fr 1fr; }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .field-label {
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--slate-800);
-      margin-bottom: 3px;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-
-    .field-label .required {
-      color: #dc2626;
-      font-weight: 800;
-    }
-
-    .field-label .hint {
-      font-size: 9px;
-      color: var(--slate-400);
-      font-weight: 400;
-      text-transform: none;
-    }
-
-    .field-line {
-      height: 24px;
-      border-bottom: 1.2px solid #8c9ba5;
-      background: #fafbfc;
-      border-radius: 2px 2px 0 0;
-    }
-
-    .field-textarea {
-      height: 56px;
-      border: 1px solid #8c9ba5;
-      background: #fafbfc;
-      border-radius: 3px;
-    }
-
-    .field-textarea-large {
-      height: 70px;
-      border: 1px solid #8c9ba5;
-      background: #fafbfc;
-      border-radius: 3px;
-    }
-
-    /* CASILLAS DE VERIFICACIÓN / CHECKBOXES */
-    .checkbox-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 16px;
-      padding: 4px 2px;
-      align-items: center;
-    }
-
-    .cb-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 10.5px;
-      color: var(--slate-800);
-    }
-
-    .cb-box {
-      width: 13px;
-      height: 13px;
-      border: 1.5px solid var(--primary);
-      border-radius: 2px;
-      display: inline-block;
-      background: #fff;
-    }
-
-    /* TABLA DE PRESUPUESTO */
-    .budget-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 4px;
-      font-size: 10.5px;
-    }
-
-    .budget-table th {
-      background: #e2e8f0;
-      color: var(--primary);
-      font-weight: 700;
-      text-align: left;
-      padding: 5px 8px;
-      border: 1px solid #cbd5e1;
-      font-size: 10px;
-      text-transform: uppercase;
-    }
-
-    .budget-table td {
-      border: 1px solid #cbd5e1;
-      padding: 5px 8px;
-      height: 24px;
-    }
-
-    .budget-table tr:nth-child(even) td {
-      background: #fbfcfe;
-    }
-
-    .budget-table .total-row td {
-      font-weight: 700;
-      background: #f1f5f9;
-      border-top: 2px solid var(--primary);
-      color: var(--primary);
-    }
-
-    /* DECLARACIÓN JURADA */
-    .declaration-box {
-      background: #f8fafc;
-      border: 1px solid var(--slate-200);
-      border-radius: 4px;
-      padding: 8px 12px;
-      font-size: 10px;
-      line-height: 1.45;
-      color: var(--slate-600);
-      margin-bottom: 12px;
-      text-align: justify;
-    }
-
-    /* BLOQUE DE FIRMAS */
-    .signatures-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 14px;
-      margin-top: 8px;
-    }
-
-    .signature-card {
-      border: 1px solid #cbd5e1;
-      border-radius: 4px;
-      padding: 10px;
-      background: #ffffff;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 130px;
-    }
-
-    .signature-card.admin-card {
-      border: 1.5px dashed var(--gold);
-      background: var(--gold-soft);
+    /* SIGNATURE AREA */
+    .sig-section {
+      margin-top: 26px;
     }
 
     .sig-title {
-      font-size: 10px;
-      font-weight: 700;
-      color: var(--primary);
+      font-size: 13px;
+      font-weight: 800;
       text-transform: uppercase;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 4px;
-      margin-bottom: 6px;
+      margin-bottom: 14px;
     }
 
-    .signature-card.admin-card .sig-title {
-      color: var(--gold);
-      border-color: var(--gold-border);
+    .sig-box {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
     }
 
     .sig-field {
-      font-size: 9.5px;
-      color: var(--slate-600);
-      margin-top: 3px;
+      flex: 1;
     }
 
-    .sig-line-area {
-      height: 48px;
-      border-bottom: 1px dashed #94a3b8;
-      margin: 6px 0 4px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
+    .sig-draw-area {
+      height: 70px;
+      border-bottom: 1.5px dotted #555555;
+      margin-top: 8px;
     }
 
-    .sig-caption {
-      font-size: 8.5px;
-      color: var(--slate-400);
-      text-align: center;
-      text-transform: uppercase;
+    /* CONTACT BAS DE PAGE */
+    .footer-help {
+      margin-top: 45px;
+      padding-top: 18px;
+      border-top: 1px solid #e2e8f0;
+      font-size: 12.5px;
+      line-height: 1.6;
     }
 
-    /* PIE DE PÁGINA DOCUMENTO */
-    .doc-footer {
-      margin-top: 18px;
-      padding-top: 10px;
-      border-top: 1.5px solid var(--slate-200);
-      font-size: 9px;
-      color: var(--slate-600);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      line-height: 1.4;
-    }
-
-    .doc-footer-legal {
-      max-width: 75%;
-    }
-
-    .doc-footer-page {
-      text-align: right;
+    .footer-help strong {
       font-weight: 700;
-      color: var(--primary);
     }
 
-    /* INSTRUCCIONES DE ENVÍO POSTERIOR */
-    .submission-guide {
-      background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
-      border: 1px solid var(--slate-200);
-      border-radius: 4px;
-      padding: 10px 14px;
-      margin-top: 12px;
+    .footer-legal {
+      margin-top: 14px;
       font-size: 10px;
+      color: #64748b;
+      text-align: center;
     }
 
-    .submission-guide h4 {
-      color: var(--primary);
-      font-size: 10.5px;
-      font-weight: 700;
-      margin-bottom: 4px;
-      text-transform: uppercase;
-    }
-
-    .submission-guide ul {
-      margin-left: 18px;
-      line-height: 1.45;
-    }
-
-    /* REGLAS ESPECÍFICAS PARA IMPRESIÓN (PDF) */
+    /* IMPRESSION A4 PARFAITE SUR 1 SEULE PAGE */
     @media print {
       body {
         background: #ffffff;
-        font-size: 10.5px;
+        padding: 0;
+        font-size: 12.5px;
       }
 
-      .screen-action-bar {
+      .screen-bar {
         display: none !important;
       }
 
-      .document-wrapper {
-        margin: 0;
-        padding: 0;
-        max-width: 100%;
+      .page-sheet {
         box-shadow: none;
-        border-radius: 0;
+        padding: 24px 32px;
+        max-width: 100%;
+        min-height: auto;
       }
 
       @page {
         size: A4 portrait;
-        margin: 7mm 9mm 9mm 9mm;
+        margin: 10mm 12mm;
       }
 
-      * {
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
+      .form-row {
+        margin-bottom: 9px;
       }
 
-      .section-block {
-        page-break-inside: avoid;
+      .sig-section {
+        margin-top: 20px;
       }
 
-      .signatures-grid {
-        page-break-inside: avoid;
-      }
-
-      .submission-guide {
-        page-break-inside: avoid;
-      }
-    }
-
-    /* AJUSTE RESPONSIVE PARA DISPOSITIVOS MÓVILES AL VISUALIZAR */
-    @media screen and (max-width: 768px) {
-      .document-wrapper {
-        margin: 10px;
-        padding: 16px;
-      }
-      .grid-2, .grid-3, .grid-4, .grid-1-2, .grid-2-1 {
-        grid-template-columns: 1fr;
-      }
-      .signatures-grid {
-        grid-template-columns: 1fr;
-      }
-      .header-table, .header-table tbody, .header-table tr {
-        display: block;
-      }
-      .header-logo-col, .header-title-col, .header-ref-col {
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 8px;
-      }
-      .header-logo-img {
-        margin: 0 auto;
-      }
-      .header-ref-col .ref-box {
-        text-align: center;
-      }
-      .screen-action-bar {
-        flex-direction: column;
-        gap: 10px;
-        align-items: stretch;
-      }
-      .screen-action-bar .btn-group {
-        justify-content: stretch;
-      }
-      .btn-action {
-        flex: 1;
-        justify-content: center;
+      .footer-help {
+        margin-top: 30px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- BARRA DE ACCIONES PARA NAVEGADOR (OCULTA AL IMPRIMIR) -->
-  <header class="screen-action-bar">
-    <div class="info">
-      <span class="info-badge">Documento Oficial</span>
-      <span class="info-text">Fundación Hancock Prospecting PTY LTD — Formulario A4 para Descarga y Firma Manuscrita</span>
+  <!-- BARRE SUPÉRIEURE ÉCRAN -->
+  <div class="screen-bar">
+    <div>
+      <strong>Formulaire Officiel</strong> — Hancock Prospecting PTY LTD
     </div>
-    <div class="btn-group">
-      <a href="./index.html#solicitud" class="btn-action btn-secondary" title="Volver al portal web">
-        &larr; Volver al Portal Web
-      </a>
-      <button onclick="window.print()" class="btn-action btn-print" title="Imprimir o Guardar como PDF">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="6 9 6 2 18 2 18 9"></polyline>
-          <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-          <rect x="6" y="14" width="12" height="8"></rect>
-        </svg>
-        Imprimir / Guardar en PDF
-      </button>
+    <div style="display: flex; gap: 10px;">
+      <a href="./index.html#solicitud" class="btn-back">&larr; Retour au site</a>
+      <button onclick="window.print()" class="btn-pdf">Imprimer / Enregistrer en PDF</button>
     </div>
-  </header>
+  </div>
 
-  <!-- CONTENEDOR DEL DOCUMENTO IMPRESO / PDF -->
-  <main class="document-wrapper">
+  <!-- PAGE BLANCHE -->
+  <div class="page-sheet">
 
-    <!-- CABECERA INSTITUCIONAL -->
-    <table class="header-table">
-      <tr>
-        <td class="header-logo-col">
-          <img src="./img/fundacion-prospeccion-hancock-logo-sans-cadrant.png" alt="Hancock Prospecting Logo" class="header-logo-img" onerror="this.style.display='none'">
-        </td>
-        <td class="header-title-col">
-          <h1>HANCOCK PROSPECTING PTY LTD</h1>
-          <div class="subtitle">Comité Filantrópico y Fundación Hancock</div>
-          <div style="font-size: 10px; color: var(--slate-600); margin-top: 3px;">
-            Dossier Oficial de Solicitud de Donación y Patrocinio
-          </div>
-        </td>
-        <td class="header-ref-col">
-          <div class="ref-box">
-            <strong>REF: FHP-DON-2026-ES</strong>
-            <div>Fecha: ___ / ___ / 2026</div>
-            <div>ACN: 008 676 417</div>
-            <div>ABN: 69 008 676 417</div>
-          </div>
-        </td>
-      </tr>
-    </table>
-
-    <!-- AVISO DE PROTOCOLO -->
-    <div class="notice-box">
-      <div>
-        <strong>INSTRUCCIONES:</strong> Este formulario oficial está destinado a personas físicas o entidades que deseen formular su solicitud por vía manuscrita o documental. Complete los campos con letra de imprenta clara y remítalo acompañado de los justificantes requeridos.
-      </div>
-      <div class="notice-contacts">
-        WhatsApp Oficial: <strong>+30 699 406 8418</strong><br>
-        Email: <strong>prospectinghancock0@gmail.com</strong>
-      </div>
+    <!-- EN-TÊTE -->
+    <div class="header">
+      <img src="./img/fundacion-prospeccion-hancock-logo-sans-cadrant.png" alt="Hancock Prospecting Logo" class="header-logo" onerror="this.style.display='none'">
+      <div class="header-company">HANCOCK PROSPECTING PTY LTD &bull; FONDATION HANCOCK</div>
+      <h1 class="main-title">FORMULAIRE DE DEMANDE DE DON</h1>
+      <div class="sub-title">Dossier officiel de subvention et mécénat social &bull; Réf : HP-2026-DON</div>
     </div>
 
-    <!-- SECCIÓN 1: IDENTIFICACIÓN DEL SOLICITANTE -->
-    <section class="section-block">
-      <div class="section-title">
-        <div><span class="section-num">01</span> IDENTIFICACIÓN DEL SOLICITANTE / REPRESENTANTE LEGAL</div>
-        <div class="section-right-note">Persona física u Organización</div>
-      </div>
-      
-      <div class="form-grid grid-3">
-        <div class="field">
-          <label class="field-label">Nombre(s) <span class="required">*</span></label>
-          <div class="field-line"></div>
-        </div>
-        <div class="field">
-          <label class="field-label">Apellidos <span class="required">*</span></label>
-          <div class="field-line"></div>
-        </div>
-        <div class="field">
-          <label class="field-label">Fecha de Nacimiento <span class="required">*</span></label>
-          <div class="field-line"></div>
-        </div>
-      </div>
-
-      <div class="form-grid grid-3" style="margin-top: 4px;">
-        <div class="field">
-          <label class="field-label">Nacionalidad <span class="required">*</span></label>
-          <div class="field-line"></div>
-        </div>
-        <div class="field">
-          <label class="field-label">Tipo de Documento <span class="required">*</span></label>
-          <div class="checkbox-group" style="padding-top: 2px;">
-            <span class="cb-item"><span class="cb-box"></span> DNI/NIE</span>
-            <span class="cb-item"><span class="cb-box"></span> Pasaporte</span>
-            <span class="cb-item"><span class="cb-box"></span> RUT/CURP/Otro</span>
-          </div>
-        </div>
-        <div class="field">
-          <label class="field-label">N° de Identificación <span class="required">*</span></label>
-          <div class="field-line"></div>
-        </div>
-      </div>
-
-      <div class="form-grid grid-3" style="margin-top: 4px;">
-        <div class="field">
-          <label class="field-label">Organización / Entidad (si aplica)</label>
-          <div class="field-line"></div>
-        </div>
-        <div class="field">
-          <label class="field-label">Cargo / Profesión <span class="required">*</span></label>
-          <div class="field-line"></div>
-        </div>
-        <div class="field">
-          <label class="field-label">Nivel de Ingresos Aprox. (anual/mensual)</label>
-          <div class="field-line"></div>
-        </div>
-      </div>
-
-      <div class="form-grid grid-4" style="margin-top: 4px;">
-        <div class="field">
-          <label class="field-label">Teléfono / WhatsApp <span class="required">*</span></label>
-          <div class="field-line"></div>
-        </div>
-        <div class="field">
-          <label class="field-label">Correo Electrónico <span class="required">*</span></label>
-          <div class="field-line"></div>
-        </div>
-        <div class="field">
-          <label class="field-label">País de Residencia <span class="required">*</span></label>
-          <div class="field-line"></div>
-        </div>
-        <div class="field">
-          <label class="field-label">Ciudad / Provincia <span class="required">*</span></label>
-          <div class="field-line"></div>
-        </div>
-      </div>
-
-      <div class="form-grid" style="margin-top: 4px;">
-        <div class="field">
-          <label class="field-label">Dirección Postal Completa <span class="required">*</span></label>
-          <div class="field-line"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECCIÓN 2: OBJETO Y NATURALEZA DE LA SOLICITUD -->
-    <section class="section-block">
-      <div class="section-title">
-        <div><span class="section-num">02</span> OBJETO DE LA SOLICITUD Y DESCRIPCIÓN DEL PROYECTO</div>
-        <div class="section-right-note">Finalidad del apoyo solicitado</div>
-      </div>
-
-      <div class="form-grid grid-2-1">
-        <div class="field">
-          <label class="field-label">Título del Proyecto o Causa <span class="required">*</span></label>
-          <div class="field-line"></div>
-        </div>
-        <div class="field">
-          <label class="field-label">Monto Total Solicitado <span class="required">*</span> <span class="hint">(especificar divisa)</span></label>
-          <div class="field-line"></div>
-        </div>
-      </div>
-
-      <div class="field" style="margin-top: 6px;">
-        <label class="field-label">Ámbito Prioritario de Intervención <span class="required">*</span></label>
-        <div class="checkbox-group">
-          <span class="cb-item"><span class="cb-box"></span> Salud & Hospitales</span>
-          <span class="cb-item"><span class="cb-box"></span> Educación & Becas</span>
-          <span class="cb-item"><span class="cb-box"></span> Deporte & Juventud</span>
-          <span class="cb-item"><span class="cb-box"></span> Desarrollo Comunitario</span>
-          <span class="cb-item"><span class="cb-box"></span> Investigación Científica</span>
-          <span class="cb-item"><span class="cb-box"></span> Emergencia Humanitaria</span>
-          <span class="cb-item"><span class="cb-box"></span> Otro</span>
-        </div>
-      </div>
-
-      <div class="form-grid grid-3" style="margin-top: 6px;">
-        <div class="field">
-          <label class="field-label">País / Región de Impacto <span class="required">*</span></label>
-          <div class="field-line"></div>
-        </div>
-        <div class="field">
-          <label class="field-label">N° de Beneficiarios Estimados <span class="required">*</span></label>
-          <div class="field-line"></div>
-        </div>
-        <div class="field">
-          <label class="field-label">Plazo de Ejecución (meses)</label>
-          <div class="field-line"></div>
-        </div>
-      </div>
-
-      <div class="field" style="margin-top: 6px;">
-        <label class="field-label">Memoria Explicativa del Proyecto / Justificación de la Ayuda <span class="required">*</span> <span class="hint">(Objetivos, beneficiarios y uso previsto)</span></label>
-        <div class="field-textarea-large"></div>
-      </div>
-    </section>
-
-    <!-- SECCIÓN 3: PRESUPUESTO DETALLADO ESTIMATIVO -->
-    <section class="section-block">
-      <div class="section-title">
-        <div><span class="section-num">03</span> DESGLOSE DEL PRESUPUESTO ESTIMADO</div>
-        <div class="section-right-note">Partidas presupuestarias principales</div>
-      </div>
-
-      <table class="budget-table">
-        <thead>
-          <tr>
-            <th style="width: 6%; text-align: center;">N°</th>
-            <th style="width: 32%;">Concepto / Rubro</th>
-            <th style="width: 42%;">Descripción Detallada del Gasto</th>
-            <th style="width: 20%; text-align: right;">Importe Estimado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="text-align: center;">01</td>
-            <td></td>
-            <td></td>
-            <td style="text-align: right;"></td>
-          </tr>
-          <tr>
-            <td style="text-align: center;">02</td>
-            <td></td>
-            <td></td>
-            <td style="text-align: right;"></td>
-          </tr>
-          <tr>
-            <td style="text-align: center;">03</td>
-            <td></td>
-            <td></td>
-            <td style="text-align: right;"></td>
-          </tr>
-          <tr>
-            <td style="text-align: center;">04</td>
-            <td></td>
-            <td></td>
-            <td style="text-align: right;"></td>
-          </tr>
-          <tr>
-            <td style="text-align: center;">05</td>
-            <td></td>
-            <td></td>
-            <td style="text-align: right;"></td>
-          </tr>
-          <tr class="total-row">
-            <td colspan="3" style="text-align: right; padding-right: 14px; text-transform: uppercase;">PRESUPUESTO TOTAL GENERAL SOLICITADO:</td>
-            <td style="text-align: right; font-size: 11px;"></td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <!-- SECCIÓN 4: DOCUMENTACIÓN ADJUNTA -->
-    <section class="section-block">
-      <div class="section-title">
-        <div><span class="section-num">04</span> DOCUMENTACIÓN ADJUNTA / PIÈCES JUSTIFICATIVES</div>
-        <div class="section-right-note">Marque los documentos que anexa al expediente</div>
-      </div>
-
-      <div class="checkbox-group" style="gap: 8px 18px;">
-        <span class="cb-item"><span class="cb-box"></span> Copia del Documento de Identidad (DNI/Pasaporte)</span>
-        <span class="cb-item"><span class="cb-box"></span> Memoria Técnica o Proyecto Detallado</span>
-        <span class="cb-item"><span class="cb-box"></span> Presupuestos / Cotizaciones de proveedores</span>
-        <span class="cb-item"><span class="cb-box"></span> Estatutos o Registro legal (si es entidad)</span>
-        <span class="cb-item"><span class="cb-box"></span> Certificado de Titularidad Bancaria (IBAN / BIC)</span>
-        <span class="cb-item"><span class="cb-box"></span> Cartas de recomendación o aval institucional</span>
-        <span class="cb-item"><span class="cb-box"></span> Fotografías o material de apoyo del proyecto</span>
-        <span class="cb-item"><span class="cb-box"></span> Otros justificantes complementarios</span>
-      </div>
-    </section>
-
-    <!-- DECLARACIÓN JURADA -->
-    <div class="declaration-box">
-      <strong>DECLARACIÓN DE VERACIDAD Y COMPROMISO ÉTICO:</strong> El abajo firmante certifica bajo juramento que todas las informaciones y datos consignados en este formulario y en los documentos adjuntos son exactos, verídicos y comprobables. Asimismo, se compromete expresamente a destinar íntegramente los fondos o ayudas concedidas a los fines señalados, y a remitir al Comité de Donaciones de Hancock Prospecting PTY LTD los comprobantes y memorias de seguimiento exigidos por la política de transparencia institucional y la legislación australiana e internacional aplicable.
+    <!-- INFORMATIONS DU DEMANDEUR -->
+    <div class="form-row">
+      <span class="label">Nom :</span>
+      <span class="dots"></span>
     </div>
 
-    <!-- SECCIÓN 5: FIRMAS Y VALIDACIONES -->
-    <section class="section-block">
-      <div class="signatures-grid">
-        <!-- SOLICITANTE -->
-        <div class="signature-card">
-          <div>
-            <div class="sig-title">El Solicitante / Titular</div>
-            <div class="sig-field">Nombre: _______________________</div>
-            <div class="sig-field">Fecha: ____ / ____ / 2026</div>
-            <div class="sig-field">Lugar: ________________________</div>
-          </div>
-          <div>
-            <div class="sig-line-area"></div>
-            <div class="sig-caption">Firma manuscrita del solicitante</div>
-          </div>
-        </div>
-
-        <!-- ENTIDAD / SELLO -->
-        <div class="signature-card">
-          <div>
-            <div class="sig-title">Entidad / Representante</div>
-            <div class="sig-field">Entidad: ______________________</div>
-            <div class="sig-field">Cargo: ________________________</div>
-            <div class="sig-field">Fecha: ____ / ____ / 2026</div>
-          </div>
-          <div>
-            <div class="sig-line-area"></div>
-            <div class="sig-caption">Sello oficial y/o firma de la organización</div>
-          </div>
-        </div>
-
-        <!-- RESERVADO ADMINISTRACIÓN -->
-        <div class="signature-card admin-card">
-          <div>
-            <div class="sig-title">Reservado Secretaría Hancock</div>
-            <div class="sig-field">Recibido el: ____ / ____ / 2026</div>
-            <div class="sig-field">Agente: _______________________</div>
-            <div class="sig-field" style="margin-top: 4px;">
-              Dictamen: 
-              <span class="cb-item" style="display: inline-flex; margin-left: 4px;"><span class="cb-box"></span> Aceptado</span>
-              <span class="cb-item" style="display: inline-flex; margin-left: 4px;"><span class="cb-box"></span> En examen</span>
-            </div>
-          </div>
-          <div>
-            <div class="sig-line-area"></div>
-            <div class="sig-caption">Firma y Sello Oficial Hancock Prospecting</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GUÍA DE REMISIÓN -->
-    <div class="submission-guide">
-      <h4>Modalidades de Remisión de este Formulario:</h4>
-      <ul>
-        <li><strong>Vía WhatsApp Oficial:</strong> Escanee o fotografíe con buena iluminación este formulario firmado junto a los justificantes y envíelo a la Secretaría al <strong>+30 699 406 8418</strong>.</li>
-        <li><strong>Vía Correo Electrónico:</strong> Remita el archivo en formato PDF a <strong>prospectinghancock0@gmail.com</strong> indicando en el asunto: <em>"Solicitud de Donación — [Su Nombre y Apellidos] — REF: FHP-DON-2026-ES"</em>.</li>
-        <li><strong>Vía Formulario Web Interactivo:</strong> También puede completar y transmitir su expediente de forma digital e instantánea a través de nuestro portal web oficial.</li>
-      </ul>
+    <div class="form-row">
+      <span class="label">Prénom :</span>
+      <span class="dots"></span>
     </div>
 
-    <!-- PIE DE PÁGINA -->
-    <footer class="doc-footer">
-      <div class="doc-footer-legal">
-        <strong>Hancock Prospecting PTY LTD</strong> &bull; Hancock Foundation &amp; Philanthropic Directorate &bull; HPPL House, 28-42 Ventnor Avenue, West Perth WA 6005, Australia.<br>
-        ACN: 008 676 417 | ABN: 69 008 676 417 &bull; WhatsApp Secretaría Internacional: +30 699 406 8418 &bull; Correo: prospectinghancock0@gmail.com
-      </div>
-      <div class="doc-footer-page">
-        Doc. Oficial &bull; Ref. FHP-DON-2026-ES
-      </div>
-    </footer>
+    <div class="form-row">
+      <span class="label">Date de naissance :</span>
+      <span class="dots"></span>
+    </div>
 
-  </main>
+    <div class="form-row">
+      <span class="label">Nationalité :</span>
+      <span class="dots"></span>
+    </div>
+
+    <div class="form-row">
+      <span class="label">N° Document (DNI / Passeport / ID) :</span>
+      <span class="dots"></span>
+    </div>
+
+    <div class="form-row">
+      <span class="label">Téléphone / WhatsApp :</span>
+      <span class="dots"></span>
+    </div>
+
+    <div class="form-row">
+      <span class="label">Mail :</span>
+      <span class="dots"></span>
+    </div>
+
+    <div class="form-row">
+      <span class="label">Pays & Ville :</span>
+      <span class="dots"></span>
+    </div>
+
+    <div class="form-row">
+      <span class="label">Organisme / Profession :</span>
+      <span class="dots"></span>
+    </div>
+
+    <!-- DÉTAILS DE LA DEMANDE -->
+    <div class="section-header">DÉTAILS DU PROJET ET DU DON</div>
+
+    <div class="form-row">
+      <span class="label">Titre du projet :</span>
+      <span class="dots"></span>
+    </div>
+
+    <div class="form-row">
+      <span class="label">Domaine (Santé / Éducation / Sport / Autre) :</span>
+      <span class="dots"></span>
+    </div>
+
+    <div class="form-row">
+      <span class="label">Montant sollicité (€ / $ / AUD) :</span>
+      <span class="dots"></span>
+    </div>
+
+    <div style="margin-top: 8px;">
+      <span class="label">Description courte du projet / besoin :</span>
+      <div class="dots-multiline" style="margin-top: 6px;"></div>
+      <div class="dots-multiline"></div>
+    </div>
+
+    <!-- SIGNATURE -->
+    <div class="sig-section">
+      <div class="sig-title">SIGNATURE</div>
+
+      <div class="sig-box">
+        <div class="sig-field">
+          <div class="form-row" style="margin-bottom: 6px;">
+            <span class="label">Fait à :</span>
+            <span class="dots"></span>
+          </div>
+          <div class="form-row">
+            <span class="label">Le :</span>
+            <span class="dots"></span>
+          </div>
+        </div>
+
+        <div class="sig-field">
+          <span class="label">Signature du demandeur :</span>
+          <div class="sig-draw-area"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT / PIED DE PAGE IDENTIQUE À L'EXEMPLE DU CLIENT -->
+    <div class="footer-help">
+      <p style="margin-bottom: 6px;"><strong>Pour envoyer votre formulaire rempli ou en cas de question :</strong></p>
+      <p>&bull; <strong>WhatsApp Secrétariat :</strong> +30 699 406 8418</p>
+      <p>&bull; <strong>Mail officiel :</strong> prospectinghancock0@gmail.com</p>
+    </div>
+
+    <div class="footer-legal">
+      Hancock Prospecting PTY LTD &bull; ACN : 008 676 417 &bull; ABN : 69 008 676 417 &bull; West Perth WA 6005, Australie
+    </div>
+
+  </div>
 
 </body>
 </html>
