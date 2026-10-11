@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulaire de Demande de Don — Hancock Prospecting</title>
+  <title>Formulario de Solicitud de Donación — Hancock Prospecting</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
       font-size: 13.5px;
     }
 
-    /* BARRE D'ACTION ÉCRAN (INVISIBLE À L'IMPRESSION) */
+    /* BARRA SUPERIOR EN PANTALLA (OCULTA AL IMPRIMIR) */
     .screen-bar {
       max-width: 780px;
       margin: 0 auto 16px;
@@ -58,24 +58,24 @@
       color: #ffffff;
     }
 
-    /* FEUILLE BLANCHE A4 */
+    /* HOJA BLANCA A4 */
     .page-sheet {
       max-width: 780px;
       margin: 0 auto;
       background: #ffffff;
-      padding: 40px 48px;
+      padding: 38px 48px;
       box-shadow: 0 2px 20px rgba(0,0,0,0.08);
       min-height: 1050px;
     }
 
-    /* EN-TÊTE */
+    /* ENCABEZADO */
     .header {
       text-align: center;
       margin-bottom: 24px;
     }
 
     .header-logo {
-      max-height: 55px;
+      max-height: 52px;
       margin-bottom: 8px;
     }
 
@@ -103,7 +103,7 @@
       margin-top: 2px;
     }
 
-    /* SECTION TITRES */
+    /* TÍTULO DE SECCIÓN */
     .section-header {
       font-size: 13px;
       font-weight: 800;
@@ -113,23 +113,12 @@
       margin: 22px 0 12px 0;
     }
 
-    /* LIGNES AVEC POINTS STYLE DOCUMENT DE RÉFÉRENCE */
+    /* FILAS CON LÍNEAS DE PUNTOS */
     .form-row {
       display: flex;
       align-items: baseline;
       margin-bottom: 11px;
       font-size: 13.5px;
-    }
-
-    .form-row.two-cols {
-      display: flex;
-      gap: 20px;
-    }
-
-    .form-row.two-cols > div {
-      flex: 1;
-      display: flex;
-      align-items: baseline;
     }
 
     .label {
@@ -150,7 +139,7 @@
       margin-bottom: 8px;
     }
 
-    /* SIGNATURE AREA */
+    /* SECCIÓN DE FIRMAS */
     .sig-section {
       margin-top: 26px;
     }
@@ -173,14 +162,14 @@
     }
 
     .sig-draw-area {
-      height: 70px;
+      height: 65px;
       border-bottom: 1.5px dotted #555555;
       margin-top: 8px;
     }
 
-    /* CONTACT BAS DE PAGE */
+    /* CONTACTO AL PIE DE PÁGINA */
     .footer-help {
-      margin-top: 45px;
+      margin-top: 42px;
       padding-top: 18px;
       border-top: 1px solid #e2e8f0;
       font-size: 12.5px;
@@ -198,7 +187,7 @@
       text-align: center;
     }
 
-    /* IMPRESSION A4 PARFAITE SUR 1 SEULE PAGE */
+    /* REGLAS PARA IMPRESIÓN Y PDF (EXACTAMENTE 1 PÁGINA A4) */
     @media print {
       body {
         background: #ffffff;
@@ -231,137 +220,137 @@
       }
 
       .footer-help {
-        margin-top: 30px;
+        margin-top: 28px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- BARRE SUPÉRIEURE ÉCRAN -->
+  <!-- BARRA DE ACCIÓN PARA PANTALLA -->
   <div class="screen-bar">
     <div>
-      <strong>Formulaire Officiel</strong> — Hancock Prospecting PTY LTD
+      <strong>Formulario Oficial</strong> — Fundación Hancock Prospecting PTY LTD
     </div>
     <div style="display: flex; gap: 10px;">
-      <a href="./index.html#solicitud" class="btn-back">&larr; Retour au site</a>
-      <button onclick="window.print()" class="btn-pdf">Imprimer / Enregistrer en PDF</button>
+      <a href="./index.html#solicitud" class="btn-back">&larr; Volver al portal web</a>
+      <button onclick="window.print()" class="btn-pdf">Imprimir / Guardar en PDF</button>
     </div>
   </div>
 
-  <!-- PAGE BLANCHE -->
+  <!-- HOJA OFICIAL IMPRIMIBLE -->
   <div class="page-sheet">
 
-    <!-- EN-TÊTE -->
+    <!-- ENCABEZADO -->
     <div class="header">
       <img src="./img/fundacion-prospeccion-hancock-logo-sans-cadrant.png" alt="Hancock Prospecting Logo" class="header-logo" onerror="this.style.display='none'">
-      <div class="header-company">HANCOCK PROSPECTING PTY LTD &bull; FONDATION HANCOCK</div>
-      <h1 class="main-title">FORMULAIRE DE DEMANDE DE DON</h1>
-      <div class="sub-title">Dossier officiel de subvention et mécénat social &bull; Réf : HP-2026-DON</div>
+      <div class="header-company">HANCOCK PROSPECTING PTY LTD &bull; FUNDACIÓN HANCOCK</div>
+      <h1 class="main-title">FORMULARIO DE SOLICITUD DE DONACIÓN</h1>
+      <div class="sub-title">Dossier oficial de subvención y mecenazgo social &bull; Ref: HP-2026-DON</div>
     </div>
 
-    <!-- INFORMATIONS DU DEMANDEUR -->
+    <!-- DATOS DEL SOLICITANTE -->
     <div class="form-row">
-      <span class="label">Nom :</span>
+      <span class="label">Apellidos :</span>
       <span class="dots"></span>
     </div>
 
     <div class="form-row">
-      <span class="label">Prénom :</span>
+      <span class="label">Nombre :</span>
       <span class="dots"></span>
     </div>
 
     <div class="form-row">
-      <span class="label">Date de naissance :</span>
+      <span class="label">Fecha de nacimiento :</span>
       <span class="dots"></span>
     </div>
 
     <div class="form-row">
-      <span class="label">Nationalité :</span>
+      <span class="label">Nacionalidad :</span>
       <span class="dots"></span>
     </div>
 
     <div class="form-row">
-      <span class="label">N° Document (DNI / Passeport / ID) :</span>
+      <span class="label">N° de Documento (DNI / Pasaporte / RUT / ID) :</span>
       <span class="dots"></span>
     </div>
 
     <div class="form-row">
-      <span class="label">Téléphone / WhatsApp :</span>
+      <span class="label">Teléfono / WhatsApp :</span>
       <span class="dots"></span>
     </div>
 
     <div class="form-row">
-      <span class="label">Mail :</span>
+      <span class="label">Correo electrónico :</span>
       <span class="dots"></span>
     </div>
 
     <div class="form-row">
-      <span class="label">Pays & Ville :</span>
+      <span class="label">País y Ciudad :</span>
       <span class="dots"></span>
     </div>
 
     <div class="form-row">
-      <span class="label">Organisme / Profession :</span>
+      <span class="label">Organización / Profesión :</span>
       <span class="dots"></span>
     </div>
 
-    <!-- DÉTAILS DE LA DEMANDE -->
-    <div class="section-header">DÉTAILS DU PROJET ET DU DON</div>
+    <!-- DETALLES DEL PROYECTO -->
+    <div class="section-header">DETALLES DEL PROYECTO Y DE LA DONACIÓN</div>
 
     <div class="form-row">
-      <span class="label">Titre du projet :</span>
-      <span class="dots"></span>
-    </div>
-
-    <div class="form-row">
-      <span class="label">Domaine (Santé / Éducation / Sport / Autre) :</span>
+      <span class="label">Título del proyecto :</span>
       <span class="dots"></span>
     </div>
 
     <div class="form-row">
-      <span class="label">Montant sollicité (€ / $ / AUD) :</span>
+      <span class="label">Ámbito (Salud / Educación / Deporte / Social / Otro) :</span>
+      <span class="dots"></span>
+    </div>
+
+    <div class="form-row">
+      <span class="label">Monto solicitado (€ / $ / AUD) :</span>
       <span class="dots"></span>
     </div>
 
     <div style="margin-top: 8px;">
-      <span class="label">Description courte du projet / besoin :</span>
+      <span class="label">Breve descripción del proyecto o necesidad :</span>
       <div class="dots-multiline" style="margin-top: 6px;"></div>
       <div class="dots-multiline"></div>
     </div>
 
-    <!-- SIGNATURE -->
+    <!-- FIRMA -->
     <div class="sig-section">
-      <div class="sig-title">SIGNATURE</div>
+      <div class="sig-title">FIRMA</div>
 
       <div class="sig-box">
         <div class="sig-field">
           <div class="form-row" style="margin-bottom: 6px;">
-            <span class="label">Fait à :</span>
+            <span class="label">Lugar :</span>
             <span class="dots"></span>
           </div>
           <div class="form-row">
-            <span class="label">Le :</span>
+            <span class="label">Fecha :</span>
             <span class="dots"></span>
           </div>
         </div>
 
         <div class="sig-field">
-          <span class="label">Signature du demandeur :</span>
+          <span class="label">Firma del solicitante :</span>
           <div class="sig-draw-area"></div>
         </div>
       </div>
     </div>
 
-    <!-- CONTACT / PIED DE PAGE IDENTIQUE À L'EXEMPLE DU CLIENT -->
+    <!-- CONTACTO DE REMISIÓN -->
     <div class="footer-help">
-      <p style="margin-bottom: 6px;"><strong>Pour envoyer votre formulaire rempli ou en cas de question :</strong></p>
-      <p>&bull; <strong>WhatsApp Secrétariat :</strong> +30 699 406 8418</p>
-      <p>&bull; <strong>Mail officiel :</strong> prospectinghancock0@gmail.com</p>
+      <p style="margin-bottom: 6px;"><strong>Para enviar su formulario completado o en caso de consultas :</strong></p>
+      <p>&bull; <strong>WhatsApp Secretaría :</strong> +30 699 406 8418</p>
+      <p>&bull; <strong>Correo oficial :</strong> prospectinghancock0@gmail.com</p>
     </div>
 
     <div class="footer-legal">
-      Hancock Prospecting PTY LTD &bull; ACN : 008 676 417 &bull; ABN : 69 008 676 417 &bull; West Perth WA 6005, Australie
+      Hancock Prospecting PTY LTD &bull; ACN : 008 676 417 &bull; ABN : 69 008 676 417 &bull; West Perth WA 6005, Australia
     </div>
 
   </div>
